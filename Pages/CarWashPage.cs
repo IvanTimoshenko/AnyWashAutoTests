@@ -27,6 +27,9 @@ namespace AnyWashAutotests.Pages
             "Комплекс"
         };
 
+        /// <summary> Поле ввода номера телефона </summary>
+        public static Input InputPhoneNumber { get; } = new Input("//input[@type='tel']");
+
         /// <summary> Кнопка "Запросить" </summary>
         public static Button BtnRequest { get; } = new Button("//button[@type='submit']");
 
@@ -38,6 +41,9 @@ namespace AnyWashAutotests.Pages
 
         /// <summary> Поле для ввода промокода </summary>
         public static Input InputPromoCode { get; } = new Input("//input[@id='coupon']");
+
+        /// <summary> Кнопка "Х" - закрытие поля промокода </summary>
+        public static Button BtnClosePromoCode { get; } = new Button("//*[local-name()='svg'][@data-icon='times']");
 
         /// <summary> Кнопка "Транзакции" </summary>
         public static Button BtnTransactions { get; } = new Button("//a[@class='btn btn-outline-secondary']");

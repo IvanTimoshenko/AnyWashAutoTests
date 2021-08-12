@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AnyWashAutotests.Utils;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -32,24 +33,19 @@ namespace AnyWashAutotests
         public static TimeSpan WebDriverWait { get; set; } = TimeSpan.FromSeconds(20);
 
         /// <summary> Текущий WebDriver </summary>
-        public static IWebDriver webDriver = new ChromeDriver();
-
-        public static WebDriverWait Wait { get; } = new WebDriverWait(webDriver, WebDriverWait);
+        public static WebDriver WebDriver { get; set; }
 
 
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            KillAllChromeDrivers();
-            webDriver.Navigate().GoToUrl("https://anywash.ru");
-            webDriver.Manage().Window.Maximize();
-            webDriver.Manage().Timeouts().ImplicitWait = WebDriverWait;
+            WebDriver.KillAllChromeDrivers();
         }
 
         [BeforeScenario]
         static public void BeforeScenario()
         {
-            webDriver.Navigate().GoToUrl("https://anywash.ru");
+            WebDriver = new WebDriver();
         }
 
         [BeforeStep]
@@ -61,28 +57,18 @@ namespace AnyWashAutotests
         [AfterScenario]
         public void AfterScenario()
         {
-            webDriver.Quit();
+            WebDriver.Quit();
         }
 
         [AfterTestRun]
         static public void AfterTestRun()
         {
-            new Reporter("cmd", @"/k livingdoc test-assembly AnyWashAutotests.dll -t TestExecution.json");
-            new Reporter("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "C:\\Users\\ivanv\\source\\repos\\AnyWashAutotests\\bin\\Debug\\netcoreapp3.1\\LivingDoc.html");
-
-            //Process.Start("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "C:\\Users\\ivanv\\source\\repos\\AnyWashAutotests\\bin\\Debug\\netcoreapp3.1\\LivingDoc.html");
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = "cmd";
+            psi.Arguments = @"/k livingdoc test-assembly AnyWashAutotests.dll -t TestExecution.json";
+            Process.Start(psi);
         }
 
-        public static void KillAllChromeDrivers()
-        {
-            foreach (Process proc in Process.GetProcessesByName("chromedriver"))
-            {
-                try
-                {
-                    proc.Kill();
-                }
-                catch (Exception) { }
-            }
-        }
+        
     }
 }

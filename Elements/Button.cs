@@ -18,19 +18,19 @@ namespace AnyWashAutotests.Elements
         /// <param needSwitching = "bool">Нужно ли переключаться на новую вкладку</param>
         public void Click(bool needSwitching = false, params object[] param)
         {
-            var currentTabs = Hooks.webDriver.WindowHandles;                               // получаем текущие вкладки
+            var currentTabs = Hooks.WebDriver.Driver.WindowHandles;                               // получаем текущие вкладки
 
             // Пытаемся кликнуть
             if (!Click())
             {
-                Hooks.webDriver.FindElement(GetByLocator(param)).Click();
+                Hooks.WebDriver.Driver.FindElement(GetByLocator(param)).Click();
             }
 
             if (needSwitching)
             {
                 Thread.Sleep(1000);
-                string newTab = Hooks.webDriver.WindowHandles.Except(currentTabs).First();     // получаем новую вкладку
-                Hooks.webDriver.SwitchTo().Window(newTab);                                     // переключаемся на новую вкладку
+                string newTab = Hooks.WebDriver.Driver.WindowHandles.Except(currentTabs).First();     // получаем новую вкладку
+                Hooks.WebDriver.Driver.SwitchTo().Window(newTab);                                     // переключаемся на новую вкладку
             }
 
             bool Click()
@@ -38,7 +38,7 @@ namespace AnyWashAutotests.Elements
                 for (var sw = Stopwatch.StartNew(); sw.Elapsed < Config.WebDriverWait;)
                 {
                     var element = FindElement(param);
-                    Hooks.Wait.Until(ExpectedConditions.ElementToBeClickable(element));
+                    Hooks.WebDriver.Wait.Until(ExpectedConditions.ElementToBeClickable(element));
                     try
                     {
                         element.Click();

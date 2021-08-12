@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
+using LivingDoc.SpecFlowPlugin;
 
 namespace AnyWashAutotests.Steps
 {
@@ -52,14 +53,56 @@ namespace AnyWashAutotests.Steps
         public void ДопустимВыполнениеСбросаИПроверка()
         {
             string required = string.Empty;
-            if (CarWashPage.InputCarNumber.FindElement().GetAttribute("value") == null)
-            {
-                //вывод ошибки
-                return;
-            }
             CarWashPage.BtnReset.Click();
             Assert.AreEqual(required, CarWashPage.InputCarNumber.FindElement().GetAttribute("value"));
         }
+
+        [Given(@"Клик по кнопке промокоды")]
+        public void ДопустимКликПоКнопкеПромокоды()
+        {
+            CarWashPage.BtnPromoCode.Click();
+        }
+
+        [Given(@"Проверка появления поля")]
+        public void ДопустимПроверкаПоявленияПоля()
+        {
+            CarWashPage.InputPromoCode.FindElement();
+        }
+
+        [Given(@"Клик по кнопке Х")]
+        public void ДопустимКликПоКнопкеХ()
+        {
+            CarWashPage.BtnClosePromoCode.Click();
+        }
+
+        [Given(@"Проверка закрытия поля")]
+        public void ДопустимПроверкаЗакрытияПоля()
+        {
+            CarWashPage.InputPromoCode.ElementDisappear();
+        }
+
+        [Given(@"Ввод тестового госномера")]
+        public void ДопустимВводТестовогоГосномера()
+        {
+            ///Вводим случайный гос. номер из списка
+            CarWashPage.InputCarNumber.FindElement().SendKeys(new Randomizer().GetRandomCarNumber(Config.CarNumbers));
+        }
+
+        [Given(@"Выбор случайного типа услуги, запросить")]
+        public void ДопустимВыборСлучайногоТипаУслугиЗапросить()
+        {
+            ///выбираем случайный тип услуги
+            CarWashPage.ElModeSelectList.SelectDropDownList().SelectByText(new Randomizer().GetRandomWashMode(CarWashPage.WashModeList));
+            ///клик по кнопке "Запросить"
+            CarWashPage.BtnRequest.Click();
+        }
+
+        [Given(@"Проверка открытия поля ввода номера телефона")]
+        public void ДопустимПроверкаОткрытияПоляВводаНомераТелефона()
+        {
+            CarWashPage.InputPhoneNumber.FindElement();
+        }
+
     }
 }
 

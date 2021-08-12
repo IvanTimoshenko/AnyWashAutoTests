@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AnyWashAutotests.Utils;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,9 @@ namespace AnyWashAutotests.Elements
             return GetElement(param);
         }
 
+        /// <summary> Метод для выбора пункта из выпадающего списка </summary>
+        /// <param name="param"> Параметры для параметризованного XPath </param>
+        /// <returns></returns>
         public SelectElement SelectDropDownList(params object[] param)
         {
             return new SelectElement(GetElement(GetByLocator(param)));
@@ -53,7 +57,7 @@ namespace AnyWashAutotests.Elements
         /// <returns> IWebElement </returns>
         private IWebElement GetElement(params object[] param)
         {
-            return Hooks.Wait.Until(ExpectedConditions.ElementExists(GetByLocator(param)));
+            return Hooks.WebDriver.Wait.Until(ExpectedConditions.ElementExists(GetByLocator(param)));
         }
 
         /// <summary> Поиск элементов по локатору </summary>
@@ -69,7 +73,7 @@ namespace AnyWashAutotests.Elements
         /// <returns> List<IWebElement> </returns>
         private List<IWebElement> GetElements(params object[] param)
         {
-            return Hooks.webDriver.FindElements(GetByLocator(param)).ToList();
+            return Hooks.WebDriver.Driver.FindElements(GetByLocator(param)).ToList();
         }
         /// <summary> Метод проверки присутствия элемента на странице </summary>
         /// <param name="param"> Параметры для параметризированного XPath </param>
@@ -102,6 +106,19 @@ namespace AnyWashAutotests.Elements
         /// <param name="waitTime"> Время (в секндах) для ожидание пропадания элемента </param>
         public void ElementDisappear(int? waitTime = null, params object[] param)
         {
+            if (waitTime == null)
+            {
+                waitTime = Config.WebDriverWait.Seconds;
+            }
+
+            try { new WebDriverWait(Hooks.WebDriver.Driver, TimeSpan.FromSeconds(5)).Until(ExpectedConditions.ElementExists(GetByLocator(param))); }
+            catch (WebDriverTimeoutException) { return; }
+
+            for (var sw = Stopwatch.StartNew(); sw.Elapsed.TotalSeconds < waitTime;)
+            {
+                if (!Exist(param))
+                    return;
+            }
 
         }
 
@@ -117,8 +134,8 @@ namespace AnyWashAutotests.Elements
 
                 for (var sw = Stopwatch.StartNew(); sw.Elapsed < Config.WebDriverWait;)
                 {
-                    Hooks.Wait.Until(ExpectedConditions.ElementExists(GetByLocator(param)));
-                    Hooks.Wait.Until(ExpectedConditions.ElementIsVisible(GetByLocator(param)));
+                    Hooks.WebDriver.Wait.Until(ExpectedConditions.ElementExists(GetByLocator(param)));
+                    Hooks.WebDriver.Wait.Until(ExpectedConditions.ElementIsVisible(GetByLocator(param)));
 
                     var _location = element.Location;
                     if (_location.Equals(location))
