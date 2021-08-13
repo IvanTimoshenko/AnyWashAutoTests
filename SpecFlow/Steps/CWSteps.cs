@@ -31,16 +31,6 @@ namespace AnyWashAutotests.Steps
             PartnerLogInPage.BtnLogIn.Click();
         }
 
-        [Given(@"Ввод гос номера")]
-        public void ДопустимВводГос_Номера()
-        {
-            //Получаем случайный гос. номер
-            string requiredCarNumber = new Randomizer().GetRandomCarNumber(Config.CarNumbers);
-            //Передаем гос. номер в поле ввода
-            CarWashPage.InputCarNumber.FindElement().SendKeys(requiredCarNumber);
-            //Проверяем введенные данные
-            Assert.AreEqual(requiredCarNumber, CarWashPage.InputCarNumber.FindElement().GetAttribute("value").ToString());
-        }
 
         [Given(@"Выбор типа услуги")]
         public void ДопустимВыборТипаУслуги()
@@ -52,9 +42,17 @@ namespace AnyWashAutotests.Steps
         [Given(@"Выполнение сброса и проверка")]
         public void ДопустимВыполнениеСбросаИПроверка()
         {
-            string required = string.Empty;
             CarWashPage.BtnReset.Click();
-            Assert.AreEqual(required, CarWashPage.InputCarNumber.FindElement().GetAttribute("value"));
+            Assert.AreEqual(string.Empty, CarWashPage.InputCarNumber.FindElement().GetAttribute("value"));
+        }
+
+        [Given(@"Выполнение сброса и проверка двух полей")]
+        public void ДопустимВыполнениеСбросаИПроверкаДвухПолей()
+        {
+            CarWashPage.BtnReset.Click();
+            Assert.AreEqual(string.Empty, CarWashPage.InputCarNumber.FindElement().GetAttribute("value"));
+            bool required = false;
+            Assert.AreEqual(required, CarWashPage.InputPhoneNumber.Exist());
         }
 
         [Given(@"Клик по кнопке промокоды")]
@@ -63,22 +61,10 @@ namespace AnyWashAutotests.Steps
             CarWashPage.BtnPromoCode.Click();
         }
 
-        [Given(@"Проверка появления поля")]
-        public void ДопустимПроверкаПоявленияПоля()
-        {
-            CarWashPage.InputPromoCode.FindElement();
-        }
-
         [Given(@"Клик по кнопке Х")]
         public void ДопустимКликПоКнопкеХ()
         {
             CarWashPage.BtnClosePromoCode.Click();
-        }
-
-        [Given(@"Проверка закрытия поля")]
-        public void ДопустимПроверкаЗакрытияПоля()
-        {
-            CarWashPage.InputPromoCode.ElementDisappear();
         }
 
         [Given(@"Ввод тестового госномера")]
@@ -88,20 +74,34 @@ namespace AnyWashAutotests.Steps
             CarWashPage.InputCarNumber.FindElement().SendKeys(new Randomizer().GetRandomCarNumber(Config.CarNumbers));
         }
 
-        [Given(@"Выбор случайного типа услуги, запросить")]
-        public void ДопустимВыборСлучайногоТипаУслугиЗапросить()
-        {
-            ///выбираем случайный тип услуги
-            CarWashPage.ElModeSelectList.SelectDropDownList().SelectByText(new Randomizer().GetRandomWashMode(CarWashPage.WashModeList));
-            ///клик по кнопке "Запросить"
-            CarWashPage.BtnRequest.Click();
-        }
 
         [Given(@"Проверка открытия поля ввода номера телефона")]
         public void ДопустимПроверкаОткрытияПоляВводаНомераТелефона()
         {
-            CarWashPage.InputPhoneNumber.FindElement();
+            bool required = false;
+            Assert.AreEqual(required, CarWashPage.InputPhoneNumber.Exist());
         }
+
+        [Given(@"Проверка появления поля промокоды")]
+        public void ДопустимПроверкаПоявленияПоляПромокоды()
+        {
+            bool required = true;
+            Assert.AreEqual(required, CarWashPage.InputPromoCode.Exist());
+        }
+
+        [Given(@"Проверка закрытия поля промокоды")]
+        public void ДопустимПроверкаЗакрытияПоляПромокоды()
+        {
+            bool required = false;
+            Assert.AreEqual(required, CarWashPage.InputPromoCode.Exist());
+        }
+
+        [Given(@"Запросить")]
+        public void ДопустимЗапросить()
+        {
+            CarWashPage.BtnRequest.Click();
+        }
+
 
     }
 }
