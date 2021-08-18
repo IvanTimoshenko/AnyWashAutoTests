@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
 using LivingDoc.SpecFlowPlugin;
+using AnyWashAutotests.Elements;
+using OpenQA.Selenium.Support.UI;
 
 namespace AnyWashAutotests.Steps
 {
@@ -36,7 +38,9 @@ namespace AnyWashAutotests.Steps
         public void ДопустимВыборТипаУслуги()
         {
             //Рандомно вибираем тип услуги
-            CarWashPage.ElModeSelectList.SelectDropDownList().SelectByText(new Randomizer().GetRandomWashMode(CarWashPage.WashModeList));
+            
+            new SelectElement(CarWashPage.MainSelectWashMode.FindElement()).SelectByIndex(
+                new Random().Next(1, CarWashPage.ElModeSelectList.FindElements().Count));
         }
 
         [Given(@"Выполнение сброса и проверка")]

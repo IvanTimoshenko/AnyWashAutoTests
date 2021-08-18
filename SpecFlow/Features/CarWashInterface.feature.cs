@@ -242,11 +242,13 @@ testRunner.And("Проверка закрытия поля промокоды", 
         [NUnit.Framework.DescriptionAttribute("Поле ввода госномера")]
         [NUnit.Framework.CategoryAttribute("ITimoshenko")]
         [NUnit.Framework.CategoryAttribute("положительный")]
+        [NUnit.Framework.CategoryAttribute("test")]
         public virtual void ПолеВводаГосномера()
         {
             string[] tagsOfScenario = new string[] {
                     "ITimoshenko",
-                    "положительный"};
+                    "положительный",
+                    "test"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Поле ввода госномера", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 31

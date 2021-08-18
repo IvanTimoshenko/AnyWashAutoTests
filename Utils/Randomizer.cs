@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AnyWashAutotests.Elements;
+using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,9 +19,9 @@ namespace AnyWashAutotests
         }
 
         /// <summary> Метод для получения случайного типа услуги </summary>
-        /// <param name="list"> Список доступных услуг </param>
-        /// <returns> тип услуги (string) </returns>
-        public string GetRandomWashMode(List<string> list)
+        /// <param name="count"> Количество элементов с услугой </param>
+        /// <returns> индекс типа услуги </returns>
+        public IWebElement GetRandomWashMode(List<IWebElement> list)
         {
             return list[random.Next(0, list.Count - 1)];
         }
