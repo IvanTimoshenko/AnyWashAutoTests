@@ -15,5 +15,7 @@ namespace AnyWashAutotests
 
         /// <summary> Список тестовых номеров машин </summary>
         public static List<string> CarNumbers { get; } = new List<string>() { "C123CC123", "XX777X170", "XX777797" };
+
+        
     }
 }

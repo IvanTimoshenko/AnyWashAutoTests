@@ -35,7 +35,6 @@ namespace AnyWashAutotests.Utils
                 catch (Exception) { }
             }
         }
-
         /// <summary> Закрыть браузер </summary>
         public void Quit()
         {

@@ -1,17 +1,17 @@
 ﻿using AnyWashAutotests.Elements;
-using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AnyWashAutotests.Pages
 {
-    public class CarWashPage
+    class CarWashPage
     {
         /// <summary> Поле для ввода гос. номера </summary>
         public static Input InputCarNumber { get; } = new Input("//input[@id='number']");
 
-        public static Element MainSelectWashMode { get; } = new Element("//select[@id='modeSelect']");
+        /// <summary> Элемент для создания объекта класса "SelectElement" </summary>
+        public static Element ElMainSelectWashMode { get; } = new Element("//select[@id='modeSelect']");
 
         /// <summary> Элемент, содержащий все типы услуг из выпадающего списка без показателя пустоты </summary>
         public static Element ElModeSelectList { get; } = new Element("//select[@id='modeSelect']/option[not(contains(text(), 'Выберите вид мойки'))]");
@@ -35,7 +35,9 @@ namespace AnyWashAutotests.Pages
         public static Button BtnClosePromoCode { get; } = new Button("//*[local-name()='svg'][@data-icon='times']");
 
         /// <summary> Кнопка "Транзакции" </summary>
-        public static Button BtnTransactions { get; } = new Button("//a[@class='btn btn-outline-secondary']");
+        public static Button BtnTransactions { get; } = new Button("//a[@href='/historynew']");
 
+        /// <summary> Кнопка "Выйти" </summary>
+        public static Button BtnExit { get; } = new Button("//footer/a[text()='Выйти']");
     }
 }

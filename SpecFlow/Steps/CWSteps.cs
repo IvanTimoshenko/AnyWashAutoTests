@@ -8,6 +8,9 @@ using TechTalk.SpecFlow;
 using LivingDoc.SpecFlowPlugin;
 using AnyWashAutotests.Elements;
 using OpenQA.Selenium.Support.UI;
+using AnyWashAutotests.Utils;
+using OpenQA.Selenium;
+using System.Threading;
 
 namespace AnyWashAutotests.Steps
 {
@@ -37,10 +40,10 @@ namespace AnyWashAutotests.Steps
         [Given(@"Выбор типа услуги")]
         public void ДопустимВыборТипаУслуги()
         {
-            //Рандомно вибираем тип услуги
-            
-            new SelectElement(CarWashPage.MainSelectWashMode.FindElement()).SelectByIndex(
-                new Random().Next(1, CarWashPage.ElModeSelectList.FindElements().Count));
+            //Берем основной элемент выпадающего списка
+            CarWashPage.ElMainSelectWashMode.SelectDropDownList().SelectByIndex(
+                //получаем случайный индекс услуги
+                new Randomizer().GetRandomWashMode(CarWashPage.ElModeSelectList.FindElements()));
         }
 
         [Given(@"Выполнение сброса и проверка")]
@@ -105,6 +108,47 @@ namespace AnyWashAutotests.Steps
         {
             CarWashPage.BtnRequest.Click();
         }
+
+        [Given(@"Выполнение сброса и проверка полей ввода и промокодов")]
+        public void ДопустимВыполнениеСбросаИПроверкаПолейВводаИПромокодов()
+        {
+            CarWashPage.BtnReset.Click();
+            Assert.AreEqual(string.Empty, CarWashPage.InputCarNumber.FindElement().GetAttribute("value"));
+            bool required = false;
+            Assert.AreEqual(required, CarWashPage.InputPromoCode.Exist());
+        }
+
+        [Given(@"Клик по кнопке транзакции")]
+        public void ДопустимКликПоКнопкеТранзакции()
+        {
+            CarWashPage.BtnTransactions.Click();
+        }
+
+        [Given(@"Проверка открытия страницы транзакций")]
+        public void ДопустимПроверкаОткрытияСтраницыТранзакций()
+        {
+            Assert.AreEqual(true, CarWashTransactionsPage.ElTransactionsTable.FindElement().Displayed);
+        }
+
+        [Given(@"Возврат на страницу интерфейса мойки")]
+        public void ДопустимВозвратНаСтраницуИнтерфейсаМойки()
+        {
+            Hooks.WebDriver.Driver.Navigate().Back();
+            Assert.IsTrue(CarWashPage.InputCarNumber.Exist());
+        }
+
+        [Given(@"Клик по кнопке выйти")]
+        public void ДопустимКликПоКнопкеВыйти()
+        {
+            CarWashPage.BtnExit.Click();
+        }
+
+        [Given(@"Проверка открытия страницы авторизации")]
+        public void ДопустимПроверкаОткрытияСтраницыАвторизации()
+        {
+            Assert.IsTrue(PartnerLogInPage.InputName.FindElement().Displayed);
+        }
+
 
 
     }

@@ -19,17 +19,6 @@ namespace AnyWashAutotests
     /// <summary> Класс различных Hooks, выполняемых в определённый момент Specflow тестов </summary>
     class Hooks
     {
-        /// <summary> Specflow Tags </summary>
-        public static string[] Tags { get; private set; }
-
-        /// <summary> Запоминаем упавшие тесты по фильтру </summary>
-        public static List<string> FailedScenariosFilters { get; private set; } = new List<string>();
-
-        // Используется для пропуска или доработки сценария.
-        // Пример использования:    testProvider.TestIgnore("Причина пропуска сценария такая-то...");
-        //                          testProvider.TestInconclusive("Тест находится на стадии разработки...");
-        public static IUnitTestRuntimeProvider CurrentTestProvider { get; set; }
-
         public static TimeSpan WebDriverWait { get; set; } = TimeSpan.FromSeconds(20);
 
         /// <summary> Текущий WebDriver </summary>
