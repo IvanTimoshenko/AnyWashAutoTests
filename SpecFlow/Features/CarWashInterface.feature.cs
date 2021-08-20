@@ -282,7 +282,7 @@ testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 35
-testRunner.And("Проверка открытия поля ввода номера телефона", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Проверка открытия поля ввода номера телефона положит", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -376,7 +376,7 @@ this.FeatureBackground();
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 47
-testRunner.And("Проверка открытия поля ввода номера телефона", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Проверка открытия поля ввода номера телефона отриц", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -423,7 +423,7 @@ testRunner.And("Ввод тестового госномера", ((string)(null)
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 53
-testRunner.And("Проверка открытия поля ввода номера телефона", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Проверка открытия поля ввода номера телефона отриц", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -470,7 +470,7 @@ testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 59
-testRunner.And("Проверка открытия поля ввода номера телефона", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Проверка открытия поля ввода номера телефона отриц", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -562,6 +562,66 @@ testRunner.And("Клик по кнопке выйти", ((string)(null)), ((Tech
 #line hidden
 #line 70
 testRunner.And("Проверка открытия страницы авторизации", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Ввод несуществующего госномера")]
+        [NUnit.Framework.CategoryAttribute("ITimoshenko")]
+        [NUnit.Framework.CategoryAttribute("положительный")]
+        [NUnit.Framework.TestCaseAttribute("", null)]
+        [NUnit.Framework.TestCaseAttribute("", null)]
+        [NUnit.Framework.TestCaseAttribute("", null)]
+        [NUnit.Framework.TestCaseAttribute("", null)]
+        public virtual void ВводНесуществующегоГосномера(string _, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "ITimoshenko",
+                    "положительный"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("", _);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ввод несуществующего госномера", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 73
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 74
+testRunner.And("Ввод случайно сгенерированного госномера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 75
+testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 76
+testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 77
+testRunner.And("Проверка появления сообщения с ошибкой отсутствия машины в системе", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();

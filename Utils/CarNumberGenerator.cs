@@ -16,7 +16,7 @@ namespace AnyWashAutotests.Utils
             'm', 'M', 'o', 'O', 'p', 'P', 't', 'T', 'x', 'X', 'y', 'Y'};
 
         /// <summary> Список цифр </summary>
-        public static List<int> CarNumbersIntegers { get; } = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        public static List<char> CarNumbersIntegers { get; } = new List<char>() { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
         /// <summary> Типы гос. номеров </summary>
         public static List<string> LicensePlateType { get; } = new List<string>() { "X777XX777", "XX777X777", "XX777777" };
@@ -39,7 +39,7 @@ namespace AnyWashAutotests.Utils
         /// <returns> гос. номер string </returns>
         public string GetRandomCarNumber()
         {
-            string carNumber = "";
+            string carNumber = string.Empty;
             //рандомизируем тип гос. номера
             switch (new Random().Next(1, LicensePlateType.Count + 1))
             {
@@ -56,23 +56,28 @@ namespace AnyWashAutotests.Utils
                     carNumber = TaxiPlate();
                     break;
             }
-            //проверяем, не совпадает ли сгенерированный номер с номером из БД
-            for (int i = 0; i < Config.CarNumbers.Count; i++)
-            {
-                if (carNumber == Config.CarNumbers[i])
-                {
-                    GetRandomCarNumber();
-                }
-            }
+            if (IsAlreadyExists(carNumber))  GetRandomCarNumber();
             return carNumber;
+        }
+
+        /// <summary> метод проверки существования сгенерированного номера в БД </summary>
+        /// <param name="plate"> гос. номер </param>
+        /// <returns> true/false </returns>
+        private bool IsAlreadyExists(string plate)
+        {
+            foreach (var el in Config.CarNumbers)
+            {
+                if (plate == el) return true;
+            }
+            return false;
         }
 
         /// <summary> Метод для генерации стандартного гос. номера </summary>
         /// <returns> гос. номер string </returns>
         private string StandartPlate()
         {
-            List<string> plate = new List<string>();
-            //генерируем первые 6 знаков номера
+            var plate = new List<string>();
+            //генерируем первые 6 знаков гос. номера
             for (int i = 0; i < 6; i++)
             {
                 //добавляем буквы
@@ -91,22 +96,22 @@ namespace AnyWashAutotests.Utils
                     continue;
                 }
                 ///добавляем цифры
-                plate.Add(new Randomizer().GetRandomInt(CarNumbersIntegers).ToString());
-                continue;
+                plate.Add(new Randomizer().GetRandomChar(CarNumbersIntegers).ToString());
             }
             //выбираем количество цифр в регионе (2 или 3)
             for (int i = 0; i < new Randomizer().GetRandomInt(RegionLength); i++)
             {
-                plate.Add(new Randomizer().GetRandomInt(CarNumbersIntegers).ToString());
+                plate.Add(new Randomizer().GetRandomChar(CarNumbersIntegers).ToString());
             }
-            return plate.ToString();
+            //преобразуем Список в string
+            return string.Join("", plate);
         }
 
         /// <summary> Метод для генерации транзитного гос. номера </summary>
         /// <returns> гос. номер string </returns>
         private string TransitPlate()
         {
-            List<string> plate = new List<string>();
+            var plate = new List<string>();
             //генерируем первые 6 знаков гос. номера
             for (int i = 0; i < 6; i++)
             {
@@ -126,14 +131,15 @@ namespace AnyWashAutotests.Utils
                     continue;
                 }
                 ///добавляем цифры
-                plate.Add(new Randomizer().GetRandomInt(CarNumbersIntegers).ToString());
+                plate.Add(new Randomizer().GetRandomChar(CarNumbersIntegers).ToString());
             }
             //выбираем количество цифр в регионе (2 или 3)
             for (int i = 0; i < new Randomizer().GetRandomInt(RegionLength); i++)
             {
-                plate.Add(new Randomizer().GetRandomInt(CarNumbersIntegers).ToString());
+                plate.Add(new Randomizer().GetRandomChar(CarNumbersIntegers).ToString());
             }
-            return plate.ToString();
+            //преобразуем Список в string
+            return string.Join("", plate);
         }
 
         /// <summary> Метод для генерации гос. номера формата такси </summary>
@@ -160,15 +166,15 @@ namespace AnyWashAutotests.Utils
                     continue;
                 }
                 ///добавляем цифры
-                plate.Add(new Randomizer().GetRandomInt(CarNumbersIntegers).ToString());
-                continue;
+                plate.Add(new Randomizer().GetRandomChar(CarNumbersIntegers).ToString());
             }
             //выбираем количество цифр в регионе (2 или 3)
             for (int i = 0; i < new Randomizer().GetRandomInt(RegionLength); i++)
             {
-                plate.Add(new Randomizer().GetRandomInt(CarNumbersIntegers).ToString());
+                plate.Add(new Randomizer().GetRandomChar(CarNumbersIntegers).ToString());
             }
-            return plate.ToString();
+            //преобразуем Список в string
+            return string.Join("", plate);
         }
 
     }

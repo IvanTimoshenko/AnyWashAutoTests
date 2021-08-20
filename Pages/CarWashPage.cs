@@ -39,5 +39,8 @@ namespace AnyWashAutotests.Pages
 
         /// <summary> Кнопка "Выйти" </summary>
         public static Button BtnExit { get; } = new Button("//footer/a[text()='Выйти']");
+
+        /// <summary> Сообщение с ошибкой об отсутствии машины в системе </summary>
+        public static Element AlertCarIsNotExist { get; } = new Element("//div[contains(text(), 'Такой машины нет. Проверьте номер.')]");
     }
 }

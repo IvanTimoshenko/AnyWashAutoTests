@@ -47,7 +47,7 @@ namespace AnyWashAutotests
         /// <returns> случайная int </returns>
         public int Randomize(int num)
         {
-            return random.Next(1, num);
+            return random.Next(1, num + 1);
         }
     }
 }
