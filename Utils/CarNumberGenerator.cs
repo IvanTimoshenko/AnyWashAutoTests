@@ -84,7 +84,7 @@ namespace AnyWashAutotests.Utils
                 if (i == 0 || i == 4 || i == 5)
                 {
                     //выбираем язык для буквы 1 - русский, 2 - английский
-                    switch (new Randomizer().Randomize(2))
+                    switch (new Randomizer().Randomize(1, 2))
                     {
                         case 1:
                             plate.Add(new Randomizer().GetRandomChar(CarNumberRussianAlphabet).ToString());
@@ -119,7 +119,7 @@ namespace AnyWashAutotests.Utils
                 if (i == 0 || i == 1 || i == 5)
                 {
                     //выбираем язык для буквы 1 - русский, 2 - английский
-                    switch (new Randomizer().Randomize(2))
+                    switch (new Randomizer().Randomize(1, 2))
                     {
                         case 1:
                             plate.Add(new Randomizer().GetRandomChar(CarNumberRussianAlphabet).ToString());
@@ -154,7 +154,7 @@ namespace AnyWashAutotests.Utils
                 if (i == 0 || i == 1)
                 {
                     //выбираем язык для буквы 1 - русский, 2 - английский
-                    switch (new Randomizer().Randomize(2))
+                    switch (new Randomizer().Randomize(1, 2))
                     {
                         case 1:
                             plate.Add(new Randomizer().GetRandomChar(CarNumberRussianAlphabet).ToString());

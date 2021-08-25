@@ -42,5 +42,11 @@ namespace AnyWashAutotests.Pages
 
         /// <summary> Сообщение с ошибкой об отсутствии машины в системе </summary>
         public static Element AlertCarIsNotExist { get; } = new Element("//div[contains(text(), 'Такой машины нет. Проверьте номер.')]");
+
+        /// <summary> Xpath к паттерну поля ввода гос. номера </summary>
+        public static Element ElPatternCarNumber { get; } = new Element("//input[@pattern and @id='number']");
+
+        /// <summary> Паттерн проверки корректности ввода в поле гос. номера </summary>
+        public static string PatternCarNumberField { get; } = "^[ABEWVKMNPRSHOUCTYXАВЕКМНОРСТУХabewvkmnprshouctyxавекмнорстух]{1,2}\\d{3}([DABEWVKMNPRSHOUCTYXАВЕКМНОРСТУХabewvkmnprshouctyxавекмнорстух]{1,2})?\\d{2,3} *$";
     }
 }

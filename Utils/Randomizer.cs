@@ -42,12 +42,13 @@ namespace AnyWashAutotests
             return list[random.Next(0, list.Count - 1)];
         }
 
-        /// <summary> метод для получения случайной int (от 1) </summary>
-        /// <param name="num"> максимальное значение </param>
-        /// <returns> случайная int </returns>
-        public int Randomize(int num)
+        /// <summary> метод для получения случайной int </summary>
+        /// <param name="minValue"> мин. значение </param>
+        /// <param name="maxValue"> макс. значение </param>
+        /// <returns> случайную int </returns>
+        public int Randomize(int minValue, int maxValue)
         {
-            return random.Next(1, num + 1);
+            return random.Next(minValue, maxValue + 1);
         }
     }
 }

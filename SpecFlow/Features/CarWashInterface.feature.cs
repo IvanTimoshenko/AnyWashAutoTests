@@ -376,7 +376,7 @@ this.FeatureBackground();
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 47
-testRunner.And("Проверка открытия поля ввода номера телефона отриц", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Проверка соответствия паттерна поля ввода гос. номера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -423,7 +423,7 @@ testRunner.And("Ввод тестового госномера", ((string)(null)
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 53
-testRunner.And("Проверка открытия поля ввода номера телефона отриц", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Проверка соответствия паттерна поля ввода гос. номера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -470,7 +470,7 @@ testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 59
-testRunner.And("Проверка открытия поля ввода номера телефона отриц", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Проверка соответствия паттерна поля ввода гос. номера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -80,12 +80,13 @@ namespace AnyWashAutotests.Steps
             CarWashPage.InputCarNumber.FindElement().SendKeys(new Randomizer().GetRandomCarNumber(Config.CarNumbers));
         }
 
-
-        [Given(@"Проверка открытия поля ввода номера телефона отриц")]
-        public void ДопустимПроверкаОткрытияПоляВводаНомераТелефонаОтриц()
+        [Given(@"Проверка соответствия паттерна поля ввода гос\. номера")]
+        public void ДопустимПроверкаСоответствияПаттернаПоляВводаГос_Номера()
         {
-            Assert.IsFalse(CarWashPage.InputPhoneNumber.Exist());
+            //проверяем, совпадает ли заданный паттерн поля текущему
+            Assert.AreEqual(CarWashPage.PatternCarNumberField, CarWashPage.ElPatternCarNumber.FindElement().GetAttribute("pattern"));
         }
+
 
         [Given(@"Проверка появления поля промокоды")]
         public void ДопустимПроверкаПоявленияПоляПромокоды()
