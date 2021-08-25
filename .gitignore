@@ -3,6 +3,6 @@
 
 *.testlog
 *.html
-/.vs
-/bin/
-/obj/
+.vs/
+bin/
+obj/
