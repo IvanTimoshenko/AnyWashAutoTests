@@ -32,7 +32,7 @@ jobs:
       
   tests:      
     needs: build
-    name:  UI - testing
+    name:  build tests
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
@@ -42,5 +42,5 @@ jobs:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Install dependencies
       run: dotnet restore
-    - name: Unit Tests
+    - name: Run All tests
       run: dotnet test
