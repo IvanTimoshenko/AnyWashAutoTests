@@ -2,13 +2,13 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="SpecFlow\Steps\CASteps.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="SpecFlow\Steps\CWSteps.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SpecFlow\Steps\MPSteps.cs">
+    <Compile Update="SpecFlow\Steps\PMSteps.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SpecFlow\Steps\TFSteps.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

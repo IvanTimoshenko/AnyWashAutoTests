@@ -9,6 +9,6 @@ namespace AnyWashAutotests.Pages
     public class CarWashTransactionsPage
     {
         /// <summary> Елемент с таблицей транзакций </summary>
-        public static Element ElTransactionsTable = new Element("//table");
+        public static Element ElTransactionsTable = new Element("//table//th");
     }
 }

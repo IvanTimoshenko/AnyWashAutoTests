@@ -36,6 +36,12 @@ namespace AnyWashAutotests.Steps
             PartnerLogInPage.BtnLogIn.Click();
         }
 
+        [Given(@"Клик по кнопке Мойка")]
+        public void ДопустимКликПоКнопкеМойка()
+        {
+            //выбираем интерфейс автомойки
+            PartnerMainPage.ElCategoryWashing.Click();
+        }
 
         [Given(@"Выбор типа услуги")]
         public void ДопустимВыборТипаУслуги()
@@ -130,20 +136,9 @@ namespace AnyWashAutotests.Steps
         public void ДопустимВозвратНаСтраницуИнтерфейсаМойки()
         {
             Hooks.WebDriver.Driver.Navigate().Back();
-            Assert.IsTrue(CarWashPage.InputCarNumber.Exist());
+            Assert.IsTrue(PartnerMainPage.ElCategoryWashing.FindElement().Displayed);
         }
 
-        [Given(@"Клик по кнопке выйти")]
-        public void ДопустимКликПоКнопкеВыйти()
-        {
-            CarWashPage.BtnExit.Click();
-        }
-
-        [Given(@"Проверка открытия страницы авторизации")]
-        public void ДопустимПроверкаОткрытияСтраницыАвторизации()
-        {
-            Assert.IsTrue(PartnerLogInPage.InputName.FindElement().Displayed);
-        }
 
         [Given(@"Проверка открытия поля ввода номера телефона положит")]
         public void ДопустимПроверкаОткрытияПоляВводаНомераТелефонаПоложит()
