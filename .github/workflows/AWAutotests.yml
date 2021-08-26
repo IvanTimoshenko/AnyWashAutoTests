@@ -30,9 +30,9 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
       
-  unittests:      
+  tests:      
     needs: build
-    name:  Unit Testing
+    name:  UI - testing
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
