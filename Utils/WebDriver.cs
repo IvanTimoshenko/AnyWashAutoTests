@@ -21,7 +21,7 @@ namespace AnyWashAutotests.Utils
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
             Wait = new WebDriverWait(Driver, Config.WebDriverWait);
             Driver.Manage().Window.Maximize();
-            Driver.Navigate().GoToUrl("https://anywash.ru");
+            Driver.Navigate().GoToUrl(Config.MainPageURL);
         }
 
         public static void KillAllChromeDrivers()
@@ -39,6 +39,13 @@ namespace AnyWashAutotests.Utils
         public void Quit()
         {
             Driver.Quit();
+        }
+
+        public void SwitchToNewHandle(string oldTab)
+        {
+            var handles = new List<string>(Driver.WindowHandles);
+            handles.Remove(oldTab);
+            Driver.SwitchTo().Window(handles[0]);
         }
     }
 }

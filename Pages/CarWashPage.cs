@@ -11,10 +11,10 @@ namespace AnyWashAutotests.Pages
         public static Input InputCarNumber { get; } = new Input("//input[@id='number']");
 
         /// <summary> Элемент для создания объекта класса "SelectElement" </summary>
-        public static Element ElMainSelectWashMode { get; } = new Element("//select[@id='modeSelect']");
+        public static Select SelectWashMode { get; } = new Select("//select[@id='modeSelect']");
 
         /// <summary> Элемент, содержащий все типы услуг из выпадающего списка без показателя пустоты </summary>
-        public static Element ElModeSelectList { get; } = new Element("//select[@id='modeSelect']/option[not(contains(text(), 'Выберите вид мойки'))]");
+        public static Select SelectWashModeList { get; } = new Select("//select[@id='modeSelect']/option[not(contains(text(), 'Выберите вид мойки'))]");
 
         /// <summary> Поле ввода номера телефона </summary>
         public static Input InputPhoneNumber { get; } = new Input("//input[@type='tel']");

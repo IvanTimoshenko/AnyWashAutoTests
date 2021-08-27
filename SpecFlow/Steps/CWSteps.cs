@@ -1,16 +1,7 @@
 ﻿using AnyWashAutotests.Pages;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TechTalk.SpecFlow;
-using LivingDoc.SpecFlowPlugin;
-using AnyWashAutotests.Elements;
-using OpenQA.Selenium.Support.UI;
 using AnyWashAutotests.Utils;
-using OpenQA.Selenium;
-using System.Threading;
 
 namespace AnyWashAutotests.Steps
 {
@@ -40,16 +31,16 @@ namespace AnyWashAutotests.Steps
         public void ДопустимКликПоКнопкеМойка()
         {
             //выбираем интерфейс автомойки
-            PartnerMainPage.ElCategoryWashing.Click();
+            PartnerMainPage.BtnCategoryWashing.Click();
         }
 
         [Given(@"Выбор типа услуги")]
         public void ДопустимВыборТипаУслуги()
         {
             //Берем основной элемент выпадающего списка
-            CarWashPage.ElMainSelectWashMode.SelectDropDownList().SelectByIndex(
+            CarWashPage.SelectWashMode.SelectDropDownList().SelectByIndex(
                 //получаем случайный индекс услуги
-                new Randomizer().GetRandomWashMode(CarWashPage.ElModeSelectList.FindElements()));
+                new Randomizer().GetRandomWashMode(CarWashPage.SelectWashModeList.FindElements()));
         }
 
         [Given(@"Выполнение сброса и проверка")]
@@ -82,8 +73,12 @@ namespace AnyWashAutotests.Steps
         [Given(@"Ввод тестового госномера")]
         public void ДопустимВводТестовогоГосномера()
         {
-            ///Вводим случайный гос. номер из списка
-            CarWashPage.InputCarNumber.FindElement().SendKeys(new Randomizer().GetRandomCarNumber(Config.CarNumbers));
+            //получаем случайный гос. номер
+            var plate = new Randomizer().GetRandomCarNumber(Config.CarNumbers);
+            //Вводим случайный гос. номер из списка
+            CarWashPage.InputCarNumber.FindElement().SendKeys(plate);
+            //Проверяем введенные данные
+            Assert.AreEqual(plate, CarWashPage.InputCarNumber.FindElement().GetAttribute("value"));
         }
 
         [Given(@"Проверка соответствия паттерна поля ввода гос\. номера")]
@@ -129,21 +124,21 @@ namespace AnyWashAutotests.Steps
         [Given(@"Проверка открытия страницы транзакций")]
         public void ДопустимПроверкаОткрытияСтраницыТранзакций()
         {
-            Assert.IsTrue(CarWashTransactionsPage.ElTransactionsTable.FindElement().Displayed);
+            Assert.IsTrue(CarWashTransactionsPage.ElTransactionsTable.IsDisplayed());
         }
 
         [Given(@"Возврат на страницу интерфейса мойки")]
         public void ДопустимВозвратНаСтраницуИнтерфейсаМойки()
         {
             Hooks.WebDriver.Driver.Navigate().Back();
-            Assert.IsTrue(PartnerMainPage.ElCategoryWashing.FindElement().Displayed);
+            Assert.IsTrue(PartnerMainPage.BtnCategoryWashing.IsDisplayed());
         }
 
 
         [Given(@"Проверка открытия поля ввода номера телефона положит")]
         public void ДопустимПроверкаОткрытияПоляВводаНомераТелефонаПоложит()
         {
-            Assert.IsTrue(CarWashPage.InputPhoneNumber.FindElement().Displayed);
+            Assert.IsTrue(CarWashPage.InputPhoneNumber.IsDisplayed());
         }
 
         [Given(@"Ввод случайно сгенерированного госномера")]
@@ -155,7 +150,7 @@ namespace AnyWashAutotests.Steps
         [Given(@"Проверка появления сообщения с ошибкой отсутствия машины в системе")]
         public void ДопустимПроверкаПоявленияСообщенияСОшибкойОтсутствияМашиныВСистеме()
         {
-            Assert.IsTrue(CarWashPage.AlertCarIsNotExist.FindElement().Displayed);
+            Assert.IsTrue(CarWashPage.AlertCarIsNotExist.IsDisplayed());
         }
 
 

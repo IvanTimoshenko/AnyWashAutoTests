@@ -16,6 +16,8 @@ namespace AnyWashAutotests.Elements
 
         /// <summary> Параметризированный XPath элемента </summary>
         public string Xpath { get; protected set; } = null;
+
+        public IWebElement Element_ { get; protected set; } = null;
         public static object CurrentDirectory { get; internal set; }
 
         /// <summary> Создать новый элемент </summary>
@@ -32,6 +34,11 @@ namespace AnyWashAutotests.Elements
             Xpath = xpath;
         }
 
+        public Element(IWebElement element)
+        {
+            Element_ = element;
+        }
+
         /// <summary> Поиск элемента по локатору </summary>
         /// <param name="param"> Параметры для параметризированного XPath </param>
         /// <returns> Объект класса IWebElement </returns>
@@ -44,13 +51,6 @@ namespace AnyWashAutotests.Elements
             return GetElement(param);
         }
 
-        /// <summary> Метод для выбора пункта из выпадающего списка </summary>
-        /// <param name="param"> Параметры для параметризованного XPath </param>
-        /// <returns></returns>
-        public SelectElement SelectDropDownList(params object[] param)
-        {
-            return new SelectElement(GetElement(GetByLocator(param)));
-        }
 
         /// <summary> Получает элемент </summary>
         /// <param name="param"> Параметры для параметризированного XPath </param>
@@ -155,6 +155,11 @@ namespace AnyWashAutotests.Elements
                 if (e.Message.Contains("System.Net.Sockets.SocketException"))
                     throw e;
             }
+        }
+
+        public bool IsDisplayed(params object[] param)
+        {
+            return FindElement(param).Displayed;
         }
     }
 }

@@ -14,6 +14,8 @@ namespace AnyWashAutotests.Elements
         public Button(By by) : base(by) { }
         public Button(string xpath) : base(xpath) { }
 
+        public Button(IWebElement element) : base(element) { }
+
         /// <summary> Поиск элемента по локатору и клик по нему </summary>
         /// <param needSwitching = "bool">Нужно ли переключаться на новую вкладку</param>
         public void Click(bool needSwitching = false, params object[] param)
@@ -50,5 +52,21 @@ namespace AnyWashAutotests.Elements
             }
 
         }
+
+        /// <summary>
+        /// Метод для получения полей услуг шиномонтажа
+        /// </summary>
+        /// <returns> Список Кнопок </returns>
+        public List<IWebElement> GetAllCategoriesButtons(params object[] param)
+        {
+            var buttons = FindElements(param);
+            var list = new List<IWebElement>();
+            foreach (var el in buttons)
+            {
+                list.Add(el);
+            }
+            return list;
+        }
+
     }
 }

@@ -7,11 +7,14 @@ namespace AnyWashAutotests.Pages
 {
     public class PartnerMainPage
     {
+        /// <summary> Лого AnyWash - переход на главную страницу </summary>
+        public static Button BtnMainPage { get; } = new Button("//header/a[@href='//anywash.ru']");
+
         /// <summary> Элемент для открытия окна интерфейса автомойки </summary>
-        public static Button ElCategoryWashing { get; } = new Button("//div/a/h5[text()='Мойка']");
+        public static Button BtnCategoryWashing { get; } = new Button("//div/a/h5[text()='Мойка']");
 
         /// <summary> Элемент для открытия окна интерфеса шиномонтажа </summary>
-        public static Button ElCategoryTireFitting { get; } = new Button("//div/a/h5[text()='Шиномонтаж']");
+        public static Button BtnCategoryTireFitting { get; } = new Button("//div/a/h5[text()='Шиномонтаж']");
 
         /// <summary> Кнопка "Выйти" </summary>
         public static Button BtnExit { get; } = new Button("//footer/a[text()='Выйти']");

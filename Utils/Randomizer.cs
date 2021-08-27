@@ -50,5 +50,13 @@ namespace AnyWashAutotests
         {
             return random.Next(minValue, maxValue + 1);
         }
+
+        /// <summary> метод для получения случайной int </summary>
+        /// <param name="maxValue"> макс. значение </param>
+        /// <returns> случайную int </returns>
+        public int Randomize(int maxValue)
+        {
+            return random.Next(0, maxValue);
+        }
     }
 }

@@ -11,6 +11,8 @@ namespace AnyWashAutotests.Elements
 
         public Input(string xpath) : base(xpath) { }
 
+        public Input(IWebElement element) : base(element) { }
+
         /// <summary> Чистим поле </summary>
         public void ClearField(params object[] param)
         {

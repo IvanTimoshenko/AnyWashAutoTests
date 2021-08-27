@@ -1,4 +1,5 @@
 ﻿using AnyWashAutotests.Pages;
+using AnyWashAutotests.Utils;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -38,13 +39,32 @@ namespace AnyWashAutotests.SpecFlow.Steps
         [Given(@"Проверка нахождения на странице авторизации")]
         public void ДопустимПроверкаНахожденияНаСтраницеАвторизации()
         {
-            Assert.IsTrue(PartnerLogInPage.InputName.FindElement().Displayed);
+            Assert.IsTrue(PartnerLogInPage.InputName.IsDisplayed());
         }
 
         [Given(@"Проверка открытия интерфейса автомойки")]
         public void ДопустимПроверкаОткрытияИнтерфейсаАвтомойки()
         {
-            Assert.IsTrue(CarWashPage.InputCarNumber.FindElement().Displayed);
+            Assert.IsTrue(CarWashPage.InputCarNumber.IsDisplayed());
+        }
+
+        [Given(@"Проверка открытия интерфейса шиномонтажа")]
+        public void ДопустимПроверкаОткрытияИнтерфейсаШиномонтажа()
+        {
+            Assert.IsTrue(TireFittingPage.InputCarNumber.IsDisplayed());
+        }
+
+        [Given(@"Клик по Лого AnyWash")]
+        public void ДопустимКликПоЛогоAnyWash()
+        {
+            PartnerMainPage.BtnMainPage.Click();
+        }
+
+        [Given(@"Проверка открытия главной страницы")]
+        public void ДопустимПроверкаОткрытияГлавнойСтраницы()
+        {
+            Hooks.WebDriver.SwitchToNewHandle(Hooks.WebDriver.Driver.CurrentWindowHandle);
+            Assert.AreEqual(Config.MainPageURL, Hooks.WebDriver.Driver.Url);
         }
 
     }
