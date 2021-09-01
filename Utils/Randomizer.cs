@@ -21,9 +21,9 @@ namespace AnyWashAutotests
         /// <summary> Метод для получения случайного типа услуги </summary>
         /// <param name="list"> Список доступных услуг </param>
         /// <returns> индекс типа услуги </returns>
-        public int GetRandomWashMode(List<IWebElement> list)
+        public int GetRandomService(List<IWebElement> list)
         {
-            return random.Next(1, list.Count);
+            return random.Next(1, list.Count + 1);
         }
 
         /// <summary> Метод для получения случайной char </summary>
