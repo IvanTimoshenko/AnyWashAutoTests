@@ -18,9 +18,32 @@ namespace AnyWashAutotests.Elements
         /// <summary> Метод для выбора пункта из выпадающего списка </summary>
         /// <param name="param"> Параметры для параметризованного XPath </param>
         /// <returns></returns>
-        public SelectElement SelectDropDownList(params object[] param)
+        public void SelectDropDownList(int index, params object[] param)
         {
-            return new SelectElement(GetElement(GetByLocator(param)));
+            new SelectElement(GetElement(GetByLocator(param))).SelectByIndex(index);
+        }
+
+        /// <summary>
+        /// Метод для проверки активности элемента класса "Select"
+        /// </summary>
+        /// <param name="select">Объект класса "Select", содержащий путь ко всем "/options"</param>
+        /// <param name="index">Индекс для услуги "/options[INDEX]"</param>
+        /// <returns>True/False</returns>
+        public bool IsSelected(Select select, int index)
+        {
+            //проверяем, что услуга выбрана ([{index + 1}] - нумерация для элемента "/options" начинается с 1, а не с 0)
+            return Hooks.WebDriver.Driver.FindElement(By.XPath($"{select.Xpath}/option[{index + 1}]")).Selected;
+        }
+
+        /// <summary>
+        /// Метод для проверки неактивного элемента класса "Select"
+        /// </summary>
+        /// <param name="select">Объект класса "Select", содержащий путь ко всем "/options"</param>
+        /// <returns>True/False</returns>
+        public bool IsSelected(Select select)
+        {
+            //проверяем, что услуга выбрана ([{index + 1}] - нумерация для элемента "/options" начинается с 1, а не с 0)
+            return Hooks.WebDriver.Driver.FindElement(By.XPath($"{select.Xpath}/option[1]")).Selected;
         }
 
         /// <summary> Получает элемент </summary>
