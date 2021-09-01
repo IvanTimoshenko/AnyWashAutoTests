@@ -135,7 +135,13 @@ testRunner.And("Ввод тестового госномера", ((string)(null)
 testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 15
-testRunner.And("Выполнение сброса и проверка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+testRunner.And("Клик по кнопке Сбросить мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 16
+testRunner.And("Проверка очистки поля ввода госномера мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 17
+testRunner.And("Проверка очистки поля выбора услуги мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -152,7 +158,7 @@ testRunner.And("Выполнение сброса и проверка", ((string
                     "положительный"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Сброс введенных данных с запросом", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 18
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -175,17 +181,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 19
+#line 21
 testRunner.And("Ввод тестового госномера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 20
+#line 22
 testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 21
+#line 23
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 22
-testRunner.And("Выполнение сброса и проверка двух полей", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line 24
+testRunner.And("Проверка открытия поля ввода номера телефона мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 25
+testRunner.And("Клик по кнопке Сбросить мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 26
+testRunner.And("Проверка очистки поля ввода госномера мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 27
+testRunner.And("Проверка очистки поля выбора услуги мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 28
+testRunner.And("Проверка закрытия поля ввода номера телефона мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -202,7 +220,7 @@ testRunner.And("Выполнение сброса и проверка двух �
                     "положительный"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Поле промокодов", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 25
+#line 31
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -225,17 +243,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 26
-testRunner.And("Клик по кнопке промокоды", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line 32
+testRunner.And("Клик по кнопке промокоды мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 27
-testRunner.And("Проверка появления поля промокоды", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line 33
+testRunner.And("Проверка появления поля промокоды мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 28
-testRunner.And("Клик по кнопке Х", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line 34
+testRunner.And("Клик по кнопке Х мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 29
-testRunner.And("Проверка закрытия поля промокоды", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line 35
+testRunner.And("Проверка закрытия поля промокоды мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -252,7 +270,7 @@ testRunner.And("Проверка закрытия поля промокоды", 
                     "положительный"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Поле ввода госномера", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 32
+#line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -275,16 +293,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 33
+#line 39
 testRunner.And("Ввод тестового госномера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 34
+#line 40
 testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 35
+#line 41
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 36
+#line 42
 testRunner.And("Проверка открытия поля ввода номера телефона положит", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
@@ -302,7 +320,7 @@ testRunner.And("Проверка открытия поля ввода номер
                     "положительный"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Сброс введенных данных с промокодом", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 39
+#line 45
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -325,17 +343,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 40
+#line 46
 testRunner.And("Ввод тестового госномера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 41
+#line 47
 testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 42
-testRunner.And("Клик по кнопке промокоды", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line 48
+testRunner.And("Клик по кнопке промокоды мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 43
-testRunner.And("Выполнение сброса и проверка полей ввода и промокодов", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line 49
+testRunner.And("Проверка появления поля промокоды мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 50
+testRunner.And("Клик по кнопке Сбросить мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 51
+testRunner.And("Проверка закрытия поля промокоды мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 52
+testRunner.And("Проверка очистки поля ввода госномера мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 53
+testRunner.And("Проверка очистки поля выбора услуги мойка", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -352,7 +382,7 @@ testRunner.And("Выполнение сброса и проверка полей
                     "отрицательный"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Запросить без введенных данных", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 46
+#line 56
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -375,10 +405,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 47
+#line 57
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 48
+#line 58
 testRunner.And("Проверка соответствия паттерна поля ввода гос. номера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
@@ -396,7 +426,7 @@ testRunner.And("Проверка соответствия паттерна по�
                     "отрицательный"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Запросить без выбора услуги", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 51
+#line 61
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -419,13 +449,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 52
+#line 62
 testRunner.And("Ввод тестового госномера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 53
+#line 63
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 54
+#line 64
 testRunner.And("Проверка соответствия паттерна поля ввода гос. номера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
@@ -443,7 +473,7 @@ testRunner.And("Проверка соответствия паттерна по�
                     "отрицательный"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Запросить без ввода госномера", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 57
+#line 67
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -466,13 +496,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 58
+#line 68
 testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 59
+#line 69
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 60
+#line 70
 testRunner.And("Проверка соответствия паттерна поля ввода гос. номера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
@@ -490,7 +520,7 @@ testRunner.And("Проверка соответствия паттерна по�
                     "положительный"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Меню транзакций", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 63
+#line 73
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -513,13 +543,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 64
+#line 74
 testRunner.And("Клик по кнопке транзакции", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 65
+#line 75
 testRunner.And("Проверка открытия страницы транзакций", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 66
+#line 76
 testRunner.And("Возврат на страницу интерфейса мойки", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }
@@ -547,7 +577,7 @@ testRunner.And("Возврат на страницу интерфейса мой
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("", _);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ввод несуществующего госномера", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 69
+#line 79
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -570,16 +600,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 70
+#line 80
 testRunner.And("Ввод случайно сгенерированного госномера", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 71
+#line 81
 testRunner.And("Выбор типа услуги", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 72
+#line 82
 testRunner.And("Запросить", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-#line 73
+#line 83
 testRunner.And("Проверка появления сообщения с ошибкой отсутствия машины в системе", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
             }

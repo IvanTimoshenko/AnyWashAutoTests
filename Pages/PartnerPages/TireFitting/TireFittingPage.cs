@@ -24,19 +24,19 @@ namespace AnyWashAutotests.Pages
         public static Element ElPatternCarNumber { get; } = new Element("//input[@pattern and @id='number']");
 
         /// <summary> Паттерн поля ввода гос. номера </summary>
-        public static string PatternCarNumberField { get; } = "//input[@pattern='^[ABEWVKMNPRSHOUCTYXАВЕКМНОРСТУХabewvkmnprshouctyxавекмнорстух]{1,2}\\d{3}([DABEWVKMNPRSHOUCTYXАВЕКМНОРСТУХabewvkmnprshouctyxавекмнорстух]{1,2})?\\d{2,3} *$']";
+        public static string PatternCarNumberField { get; } = "^[ABEWVKMNPRSHOUCTYXАВЕКМНОРСТУХabewvkmnprshouctyxавекмнорстух]{1,2}\\d{3}([DABEWVKMNPRSHOUCTYXАВЕКМНОРСТУХabewvkmnprshouctyxавекмнорстух]{1,2})?\\d{2,3} *$";
 
         /// <summary> Елемент для создания объекта класса "Select" для количества колес </summary>
-        public static Element ElNumberOfWheelsSelect { get; } = new Element("//select[@id='wheelsSelect']");
+        public static Select SelectNumberOfWheels { get; } = new Select("//select[@id='wheelsSelect']");
 
-        /// <summary> Элемент, содержащий путь ко всем элементам количества колес </summary>
-        public static Element ElNumberOfWheelsSelectList { get; } = new Element("//select[@id='wheelsSelect']/option[not(@disabled)]");
+        /// <summary> Элемент, содержащий путь ко всем элементам количества колес без показателя пустоты </summary>
+        public static Select SelectNumberOfWheelsList { get; } = new Select("//select[@id='wheelsSelect']/option[not(@disabled)]");
 
         /// <summary> Елемент для создания объекта класса "Select" для радиуса </summary>
-        public static Element ElRadiusOfWheelSelect { get; } = new Element("//select[@id='radiusSelect']");
+        public static Select SelectRadiusOfWheels{ get; } = new Select("//select[@id='radiusSelect']");
 
-        /// <summary> Элемент, содержащий путь ко всем элементам радиуса колеса </summary>
-        public static Element ElRadiusOfWheelSelectList { get; } = new Element("//select[@id='radiusSelect']/option[not(@disabled)]");
+        /// <summary> Элемент, содержащий путь ко всем элементам радиуса колеса без показателя пустоты </summary>
+        public static Select SelectRadiusOfWheelsList { get; } = new Select("//select[@id='radiusSelect']/option[not(@disabled)]");
 
         /// <summary> Кнопка "Запросить" </summary>
         public static Button BtnSubmit { get; } = new Button("//button[@type='submit']");
@@ -50,9 +50,12 @@ namespace AnyWashAutotests.Pages
         /// <summary> Кнопка "Транзакции" </summary>
         public static Button BtnTransactions { get; } = new Button("//div/a[@href='/historynew']");
 
+        /// <summary> Поле ввода номера телефона </summary>
+        public static Input InputPhoneNumber { get; } = new Input("//input[@type='tel']");
 
 
 
+        /*
         /// <summary> Кнопка "Демонтаж монтаж" </summary>
         public static Button BtnDismounting_Mounting { get; } = new Button("//div/label[@for='tireService-0']");
 
@@ -88,7 +91,7 @@ namespace AnyWashAutotests.Pages
 
         /// <summary> Чек-бокс "Сезонный шиномонтаж" </summary>
         public static CheckBox ChBoxSeasonalTireService { get; } = new CheckBox("//input[@type='checkbox' and @id='tireService-5']");
-
+        */
 
 
         

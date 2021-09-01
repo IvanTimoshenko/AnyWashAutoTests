@@ -14,7 +14,10 @@ namespace AnyWashAutotests.Pages
         public static Select SelectWashMode { get; } = new Select("//select[@id='modeSelect']");
 
         /// <summary> Элемент, содержащий все типы услуг из выпадающего списка без показателя пустоты </summary>
-        public static Select SelectWashModeList { get; } = new Select("//select[@id='modeSelect']/option[not(contains(text(), 'Выберите вид мойки'))]");
+        public static Select SelectWashModeList { get; } = new Select("//select[@id='modeSelect']/option[not(@disabled)]");
+
+        /// <summary> Индекс элемента пустоты поля </summary>
+        public static int SelectWashModeIndexOfVoid { get; } = 1;
 
         /// <summary> Поле ввода номера телефона </summary>
         public static Input InputPhoneNumber { get; } = new Input("//input[@type='tel']");
