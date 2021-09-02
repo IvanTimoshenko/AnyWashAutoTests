@@ -128,7 +128,7 @@ namespace AnyWashAutotests.Steps
         [Given(@"Проверка открытия поля ввода номера телефона мойка")]
         public void ДопустимПроверкаОткрытияПоляВводаНомераТелефонаМойка()
         {
-            Assert.IsTrue(CarWashPage.InputPhoneNumber.FindElement().Displayed);
+            Assert.IsTrue(CarWashPage.InputPhoneNumber.IsDisplayed());
         }
 
         [Given(@"Проверка закрытия поля ввода номера телефона мойка")]

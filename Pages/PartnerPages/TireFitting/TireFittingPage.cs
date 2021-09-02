@@ -53,7 +53,14 @@ namespace AnyWashAutotests.Pages
         /// <summary> Поле ввода номера телефона </summary>
         public static Input InputPhoneNumber { get; } = new Input("//input[@type='tel']");
 
+        /// <summary> Поле ввода промокода </summary>
+        public static Input InputPromoCode { get; } = new Input("//input[@id='coupon']");
 
+        /// <summary> Кнопка "Х" - закрытия поля промокодов </summary>
+        public static Button BtnClosePromoCodeField { get; } = new Button("//*[local-name()='svg'][@data-icon='times']");
+
+        /// <summary> Сообщение с ошибкой об отсутствии машины в системе </summary>
+        public static Element AlertCarIsNotExist { get; } = new Element("//div[contains(text(), 'Такой машины нет. Проверьте номер.')]");
 
         /*
         /// <summary> Кнопка "Демонтаж монтаж" </summary>
@@ -94,6 +101,6 @@ namespace AnyWashAutotests.Pages
         */
 
 
-        
+
     }
 }

@@ -1,5 +1,7 @@
 ﻿using AnyWashAutotests.Elements;
 using AnyWashAutotests.Pages;
+using AnyWashAutotests.Pages.PartnerPages.TireFitting;
+using AnyWashAutotests.Utils;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -89,8 +91,8 @@ namespace AnyWashAutotests.SpecFlow.Steps
             }
         }
 
-        [Given(@"Выбор количества и радиуса колес")]
-        public void ДопустимВыборКоличестваИРадиусаКолес()
+        [Given(@"Выбор случайного количества и радиуса колес")]
+        public void ДопустимВыборСлучайногоКоличестваИРадиусаКолес()
         {
             var selectWheels = TireFittingPage.SelectNumberOfWheels;
             var selectRadius = TireFittingPage.SelectRadiusOfWheels;
@@ -103,6 +105,18 @@ namespace AnyWashAutotests.SpecFlow.Steps
             //проверяем, что услуга выбрана
             Assert.IsTrue(selectWheels.IsSelected(selectWheels, wheelsIndex));
             Assert.IsTrue(selectRadius.IsSelected(selectRadius, radiusIndex));
+        }
+
+        [Given(@"Клик по кнопке Промокоды шинка")]
+        public void ДопустимКликПоКнопкеПромокодыШинка()
+        {
+            TireFittingPage.BtnPromoCode.Click();
+        }
+
+        [Given(@"Проверка открытия поля ввода промокодов шинка")]
+        public void ДопустимПроверкаОткрытияПоляВводаПромокодовШинка()
+        {
+            TireFittingPage.InputPromoCode.IsDisplayed();
         }
 
 
@@ -158,6 +172,56 @@ namespace AnyWashAutotests.SpecFlow.Steps
         {
             Assert.IsFalse(TireFittingPage.InputPhoneNumber.Exist());
         }
+
+
+        [Given(@"Клик по кнопке Х, закрытие поля ввода промокодов")]
+        public void ДопустимКликПоКнопкеХЗакрытиеПоляВводаПромокодов()
+        {
+            TireFittingPage.BtnClosePromoCodeField.Click();
+        }
+
+        [Given(@"Проверка закрытия поля ввода промокодов")]
+        public void ДопустимПроверкаЗакрытияПоляВводаПромокодов()
+        {
+            Assert.IsFalse(TireFittingPage.BtnClosePromoCodeField.Exist());
+        }
+
+        [Given(@"Клик по кнопке Транзакции шинка")]
+        public void ДопустимКликПоКнопкеТранзакцииШинка()
+        {
+            TireFittingPage.BtnTransactions.Click();
+        }
+
+        [Given(@"Проверка открытия страницы Транзакций")]
+        public void ДопустимПроверкаОткрытияСтраницыТранзакций()
+        {
+            Assert.IsTrue(TireFittingTransactionsPage.ElTransactionsTable.IsDisplayed());
+        }
+
+        [Given(@"Возврат на страницу ЛК")]
+        public void ДопустимВозвратНаСтраницуЛК()
+        {
+            Hooks.WebDriver.Driver.Navigate().Back();
+        }
+
+        [Given(@"Проверка нахождения на странице ЛК")]
+        public void ДопустимПроверкаНахожденияНаСтраницеЛК()
+        {
+            Assert.IsTrue(PartnerMainPage.BtnCategoryTireFitting.IsDisplayed());
+        }
+
+        [Given(@"Ввод случайно сгенерированного госномера шинка")]
+        public void ДопустимВводСлучайноСгенерированногоГосномераШинка()
+        {
+            TireFittingPage.InputCarNumber.FindElement().SendKeys(new CarNumberGenerator().GetRandomCarNumber());
+        }
+
+        [Given(@"Проверка появления сообщения с ошибкой отсутствия машины в системе шинка")]
+        public void ДопустимПроверкаПоявленияСообщенияСОшибкойОтсутствияМашиныВСистемеШинка()
+        {
+            Assert.IsTrue(TireFittingPage.AlertCarIsNotExist.IsDisplayed());
+        }
+
 
     }
 }
