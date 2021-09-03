@@ -3,6 +3,8 @@ using NUnit.Framework;
 using TechTalk.SpecFlow;
 using AnyWashAutotests.Utils;
 using OpenQA.Selenium;
+using System.Collections.Generic;
+using AnyWashAutotests.Elements;
 
 namespace AnyWashAutotests.Steps
 {
@@ -93,7 +95,7 @@ namespace AnyWashAutotests.Steps
         {
             //получаем случайный гос. номер
             var plate = new Randomizer().GetRandomCarNumber(Config.CarNumbers);
-            //Вводим случайный гос. номер из списка
+            //Вводим случайный гос. номер
             CarWashPage.InputCarNumber.FindElement().SendKeys(plate);
             //Проверяем введенные данные
             Assert.AreEqual(plate, CarWashPage.InputCarNumber.FindElement().GetAttribute("value"));
@@ -175,6 +177,29 @@ namespace AnyWashAutotests.Steps
             Assert.IsTrue(CarWashPage.AlertCarIsNotExist.IsDisplayed());
         }
 
+        [Given(@"Проверка блокировки полей ввода госномера и услуг мойка")]
+        public void ДопустимПроверкаБлокировкиПолейВводаГосномераИУслугМойка()
+        {
+            ///список с XPath для одного элемента
+            var unitList = new List<string>() { CarWashPage.InputCarNumber.Xpath, CarWashPage.SelectWashMode.Xpath };
+
+            foreach (var el in unitList)
+            {
+                Assert.IsTrue(new Element(el).IsHided(el));
+            }
+        }
+
+        [Given(@"Проверка разблокировки полей ввода госномера и услуг мойка")]
+        public void ДопустимПроверкаРазблокировкиПолейВводаГосномераИУслугМойка()
+        {
+            ///список с XPath для одного элемента
+            var unitList = new List<string>() { CarWashPage.InputCarNumber.Xpath, CarWashPage.SelectWashMode.Xpath };
+
+            foreach (var el in unitList)
+            {
+                Assert.IsFalse(new Element(el).IsHided(el));
+            }
+        }
 
     }
 }

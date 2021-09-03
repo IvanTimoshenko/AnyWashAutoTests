@@ -157,9 +157,52 @@ namespace AnyWashAutotests.Elements
             }
         }
 
+
         public bool IsDisplayed(params object[] param)
         {
             return FindElement(param).Displayed;
+        }
+
+
+        public bool IsHided(bool required, string xPath)
+        {
+            string req;
+            if (required)
+            {
+                req = "true";
+            }
+            else
+            {
+                req = null;
+            }
+
+            var elements = FindElements(xPath);
+            foreach (var el in elements)
+            {
+                if (el.GetAttribute("disabled") == req)
+                {
+                    continue;
+                }
+                else
+                {
+                    return !required;
+                }
+            }
+            return required;
+        }
+
+        public bool IsHided(string xPath)
+        {
+            string value = FindElement(xPath).GetAttribute("disabled");
+            if (value == "true")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            throw new Exception("Ошибка при поиске атрибута");
         }
     }
 }

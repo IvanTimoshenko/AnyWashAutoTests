@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AnyWashAutotests.Elements;
+using AnyWashAutotests.Pages;
+using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,7 +20,6 @@ namespace AnyWashAutotests
         public static List<string> CarNumbers { get; } = new List<string>() { "C123CC123", "XX777X777", "XX777797" };
 
         public static string MainPageURL { get; } = "https://anywash.ru/";
-
 
 
     }

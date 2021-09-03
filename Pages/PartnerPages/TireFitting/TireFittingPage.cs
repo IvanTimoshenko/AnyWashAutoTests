@@ -14,6 +14,9 @@ namespace AnyWashAutotests.Pages
         /// <summary> Поле ввода гос. номера </summary>
         public static Input InputCarNumber { get; } = new Input("//input[@id='number']");
 
+        /// <summary> Заблокированное поле ввода гос. номера </summary>
+        public static Input InputCarNumberDisabled { get; } = new Input("//input[@disabled and @id='number']");
+
         /// <summary> XPath ко всем доступным услугам </summary>
         public static Button AllDisplayedButtons { get; } = new Button("//div[@class='form-check form-item-box ']");
 
