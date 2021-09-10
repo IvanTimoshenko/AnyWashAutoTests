@@ -6,13 +6,14 @@ using System.Text;
 
 namespace AnyWashAutotests.Elements
 {
+    /// <summary>
+    /// Специальный класс с переработанными методами для Selenium - "Выпадающий список"
+    /// </summary>
     public class Select : Element
     {
         public Select(By by) : base(by) { }
 
         public Select(string xpath) : base(xpath) { }
-
-        public Select(IWebElement element) : base(element) { }
 
 
         /// <summary> Метод для выбора пункта из выпадающего списка </summary>

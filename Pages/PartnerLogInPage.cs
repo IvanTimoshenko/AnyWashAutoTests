@@ -5,7 +5,9 @@ using System.Text;
 
 namespace AnyWashAutotests.Pages
 {
-    /// <summary> Класс объектов страницы авторизации Клиента "https://anywash.info " </summary>
+    /// <summary>
+    /// Класс Page Object - Страница авторизации
+    /// </summary>
     public class PartnerLogInPage
     {
         /// <summary> Поле ввода логина </summary>

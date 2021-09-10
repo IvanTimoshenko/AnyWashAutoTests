@@ -185,7 +185,7 @@ namespace AnyWashAutotests.Steps
 
             foreach (var el in unitList)
             {
-                Assert.IsTrue(new Element(el).IsHided(el));
+                Assert.IsTrue(new Element(el).IsHided(true));
             }
         }
 
@@ -197,7 +197,7 @@ namespace AnyWashAutotests.Steps
 
             foreach (var el in unitList)
             {
-                Assert.IsFalse(new Element(el).IsHided(el));
+                Assert.IsFalse(new Element(el).IsHided(false));
             }
         }
 

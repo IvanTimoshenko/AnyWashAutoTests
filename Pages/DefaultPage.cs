@@ -6,6 +6,9 @@ using System.Text;
 
 namespace AnyWashAutotests.Pages
 {
+    /// <summary>
+    /// Класс Page Object - Главная страница
+    /// </summary>
     public class DefaultPage
     {
         /// <summary> Кнопка "Вход для клиентов" </summary>

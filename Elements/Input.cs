@@ -5,13 +5,14 @@ using System.Text;
 
 namespace AnyWashAutotests.Elements
 {
+    /// <summary>
+    /// Специальный класс с переработанными методами для Selenium - "Поля ввода данных"
+    /// </summary>
     public class Input : Element
     {
         public Input(By by) : base(by) { }
 
         public Input(string xpath) : base(xpath) { }
-
-        public Input(IWebElement element) : base(element) { }
 
         /// <summary> Чистим поле </summary>
         public void ClearField(params object[] param)

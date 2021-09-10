@@ -49,9 +49,9 @@ namespace AnyWashAutotests.SpecFlow.Steps
         public void ДопустимВыборСлучайногоТипаУслугШинка()
         {
             //получаем список доступных услуг
-            var cats = TireFittingPage.AllDisplayedButtons.GetAllCategoriesButtons();
+            var cats = TireFittingPage.AllDisplayedButtons.FindElements();
             //получаем список чек-боксов услуг
-            var checkBoxes = TireFittingPage.AllDisplayedCheckBoxes.GetAllCategoriesCheckBoxes();
+            var checkBoxes = TireFittingPage.AllDisplayedCheckBoxes.FindElements();
             //проверяем соответсвия количества услуг\чекбоксов
             Assert.IsTrue(cats.Count == checkBoxes.Count);
             //получаем количество выбираемых услуг
@@ -146,7 +146,7 @@ namespace AnyWashAutotests.SpecFlow.Steps
         public void ДопустимПроверкаОчисткиВыбранныхУслугШинка()
         {
             //получаем список чек-боксов доступных услуг
-            var checkBoxes = TireFittingPage.AllDisplayedCheckBoxes.GetAllCategoriesCheckBoxes();
+            var checkBoxes = TireFittingPage.AllDisplayedCheckBoxes.FindElements();
             foreach (var el in checkBoxes)
             {
                 //проверяем, что услуги сброшены
@@ -240,9 +240,9 @@ namespace AnyWashAutotests.SpecFlow.Steps
 
             foreach (var el in unitList)
             {
-                Assert.IsTrue(new Element(el).IsHided(el));
+                Assert.IsTrue(new Element(el).IsHided(true));
             }
-            Assert.IsTrue(TireFittingPage.AllDisplayedCheckBoxes.IsHided(true, TireFittingPage.AllDisplayedCheckBoxes.Xpath));
+            Assert.IsTrue(TireFittingPage.AllDisplayedCheckBoxes.IsHided(true));
         }
 
         [Given(@"Проверка разблокировки полей ввода госномера и услуг шинка")]
@@ -254,11 +254,9 @@ namespace AnyWashAutotests.SpecFlow.Steps
 
             foreach (var el in unitList)
             {
-                Assert.IsFalse(new Element(el).IsHided(el));
+                Assert.IsFalse(new Element(el).IsHided(false));
             }
-            Assert.IsFalse(TireFittingPage.AllDisplayedCheckBoxes.IsHided(false, TireFittingPage.AllDisplayedCheckBoxes.Xpath));
+            Assert.IsFalse(TireFittingPage.AllDisplayedCheckBoxes.IsHided(false));
         }
-
-
     }
 }

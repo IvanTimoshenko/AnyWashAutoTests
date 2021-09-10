@@ -6,6 +6,9 @@ using System.Text;
 
 namespace AnyWashAutotests
 {
+    /// <summary>
+    /// Класс - рандомизатор
+    /// </summary>
     public class Randomizer
     {
         Random random = new Random();

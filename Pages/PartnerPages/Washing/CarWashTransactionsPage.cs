@@ -5,7 +5,9 @@ using System.Text;
 
 namespace AnyWashAutotests.Pages
 {
-    /// <summary> Класс, содержащий поля и методы для страницы Транзакий со стороны мойки </summary>
+    /// <summary>
+    /// Класс Page Object - Транзакции мойка
+    /// </summary>
     public class CarWashTransactionsPage
     {
         /// <summary> Елемент с таблицей транзакций </summary>

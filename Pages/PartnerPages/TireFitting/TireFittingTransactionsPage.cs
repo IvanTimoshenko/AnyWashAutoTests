@@ -5,6 +5,9 @@ using System.Text;
 
 namespace AnyWashAutotests.Pages.PartnerPages.TireFitting
 {
+    /// <summary>
+    /// Класс Page Object - Транзакции шиномонтаж
+    /// </summary>
     public class TireFittingTransactionsPage
     {
         /// <summary> Елемент с таблицей транзакций </summary>

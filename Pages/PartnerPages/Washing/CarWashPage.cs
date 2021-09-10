@@ -5,6 +5,9 @@ using System.Text;
 
 namespace AnyWashAutotests.Pages
 {
+    /// <summary>
+    /// Класс Page Object - Меню мойки
+    /// </summary>
     class CarWashPage
     {
         /// <summary> Поле для ввода гос. номера </summary>

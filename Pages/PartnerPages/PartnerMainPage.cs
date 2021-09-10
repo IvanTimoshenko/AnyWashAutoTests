@@ -5,6 +5,9 @@ using System.Text;
 
 namespace AnyWashAutotests.Pages
 {
+    /// <summary>
+    /// Класс Page Object - Меню ЛК партнера
+    /// </summary>
     public class PartnerMainPage
     {
         /// <summary> Лого AnyWash - переход на главную страницу </summary>

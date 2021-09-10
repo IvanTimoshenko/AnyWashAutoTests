@@ -9,6 +9,9 @@ using System.Text;
 
 namespace AnyWashAutotests.Elements
 {
+    /// <summary>
+    /// Специальный класс с переработанными методами для Selenium - общий
+    /// </summary>
     public class Element
     {
         /// <summary> Локатор элемента </summary>
@@ -17,7 +20,6 @@ namespace AnyWashAutotests.Elements
         /// <summary> Параметризированный XPath элемента </summary>
         public string Xpath { get; protected set; } = null;
 
-        public IWebElement Element_ { get; protected set; } = null;
         public static object CurrentDirectory { get; internal set; }
 
         /// <summary> Создать новый элемент </summary>
@@ -34,11 +36,6 @@ namespace AnyWashAutotests.Elements
             Xpath = xpath;
         }
 
-        public Element(IWebElement element)
-        {
-            Element_ = element;
-        }
-
         /// <summary> Поиск элемента по локатору </summary>
         /// <param name="param"> Параметры для параметризированного XPath </param>
         /// <returns> Объект класса IWebElement </returns>
@@ -50,7 +47,6 @@ namespace AnyWashAutotests.Elements
             // Возвращаем элемент
             return GetElement(param);
         }
-
 
         /// <summary> Получает элемент </summary>
         /// <param name="param"> Параметры для параметризированного XPath </param>
@@ -157,52 +153,56 @@ namespace AnyWashAutotests.Elements
             }
         }
 
-
+        /// <summary>
+        /// Метод проверки нахождения элемента на странице
+        /// </summary>
+        /// <param name="param"> Параметры для параметризированного XPath </param>
+        /// <returns> True/False </returns>
         public bool IsDisplayed(params object[] param)
         {
             return FindElement(param).Displayed;
         }
 
-
-        public bool IsHided(bool required, string xPath)
+        /// <summary>
+        /// Метод для проверки доступности элемента к изменению пользователем
+        /// </summary>
+        /// <param name="required"> Ожидаемое состояние: true - элемент скрыт, false - элемент доступен </param>
+        /// <param name="param"> Параметры для параметризированного XPath </param>
+        /// <returns> True/False </returns>
+        public bool IsHided(bool required, params object[] param)
         {
             string req;
             if (required)
             {
+                //Положительный результат функции .GetAttribute - проверяет наличие атрибута "disabled"
                 req = "true";
             }
             else
             {
+                //Отрицательный Ррзультат функции .GetAttribute - проверяет наличие атрибута "disabled"
                 req = null;
             }
 
-            var elements = FindElements(xPath);
+            var elements = FindElements(param);
+            if (elements.Count == 0)
+            {
+                throw new Exception("Элемент(ы) не был найден");
+            }
+
             foreach (var el in elements)
             {
+                //При соответствии ожидаемому результату - продолжаем
                 if (el.GetAttribute("disabled") == req)
                 {
                     continue;
                 }
+                //Если один из элементов не скрыт - возваращаем обратное ожидаемому
                 else
                 {
                     return !required;
                 }
             }
             return required;
-        }
-
-        public bool IsHided(string xPath)
-        {
-            string value = FindElement(xPath).GetAttribute("disabled");
-            if (value == "true")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            throw new Exception("Ошибка при поиске атрибута");
         }
     }
 }

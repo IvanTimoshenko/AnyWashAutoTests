@@ -6,6 +6,9 @@ using System.Text;
 
 namespace AnyWashAutotests.Pages
 {
+    /// <summary>
+    /// Класс Page Object - Меню шиномонтажа
+    /// </summary>
     public class TireFittingPage : PartnerMainPage
     {
         /// <summary> Кнопка "Назад" </summary>
