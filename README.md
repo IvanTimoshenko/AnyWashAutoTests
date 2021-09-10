@@ -7,3 +7,5 @@
 Тэги:
 @all - все тесты
 @CarWashInterface - интерфейс мойки
+@TireFittingInterface - интерфейс шиномонтажа
+@PartnerMainPageInterface - интерфейс ЛК партнера
