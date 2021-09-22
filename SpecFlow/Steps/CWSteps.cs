@@ -127,6 +127,12 @@ namespace AnyWashAutotests.Steps
             CarWashPage.BtnRequest.Click();
         }
 
+        [Given(@"Проверка заполненности данных в поле госномера мойка")]
+        public void ДопустимПроверкаЗаполненностиДанныхВПолеГосномераМойка()
+        {
+            Assert.IsTrue(CarWashPage.InputCarNumber.FindElement().GetAttribute("value") != string.Empty);
+        }
+
         [Given(@"Проверка открытия поля ввода номера телефона мойка")]
         public void ДопустимПроверкаОткрытияПоляВводаНомераТелефонаМойка()
         {

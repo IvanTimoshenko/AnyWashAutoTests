@@ -20,8 +20,6 @@ namespace AnyWashAutotests.Elements
         /// <summary> Параметризированный XPath элемента </summary>
         public string Xpath { get; protected set; } = null;
 
-        public static object CurrentDirectory { get; internal set; }
-
         /// <summary> Создать новый элемент </summary>
         /// <param name="by"> Локатор элемента </param>
         public Element(By by)
@@ -115,7 +113,6 @@ namespace AnyWashAutotests.Elements
                 if (!Exist(param))
                     return;
             }
-
         }
 
         /// <summary> Ожидаем пока элемент и страница загрузятся полностью </summary>

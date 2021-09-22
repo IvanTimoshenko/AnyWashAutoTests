@@ -176,6 +176,5 @@ namespace AnyWashAutotests.Utils
             //преобразуем Список в string
             return string.Join("", plate);
         }
-
     }
 }

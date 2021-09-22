@@ -119,6 +119,11 @@ namespace AnyWashAutotests.SpecFlow.Steps
             TireFittingPage.InputPromoCode.IsDisplayed();
         }
 
+        [Given(@"Проверка заполненности данных в поле госномера")]
+        public void ДопустимПроверкаЗаполненностиДанныхВПолеГосномера()
+        {
+            Assert.IsTrue(TireFittingPage.InputCarNumber.FindElement().GetAttribute("value") != string.Empty);
+        }
 
         [Given(@"Клик по кнопке Сбросить шинка")]
         public void ДопустимКликПоКнопкеСброситьШинка()
@@ -238,10 +243,12 @@ namespace AnyWashAutotests.SpecFlow.Steps
             var unitList = new List<string>() { TireFittingPage.InputCarNumber.Xpath, TireFittingPage.SelectNumberOfWheels.Xpath,
                 TireFittingPage.SelectRadiusOfWheels.Xpath };
 
+            //проверяем поля ввода гос. номера, радиус, количество колес
             foreach (var el in unitList)
             {
                 Assert.IsTrue(new Element(el).IsHided(true));
             }
+            //проверяем поля выбора услуг
             Assert.IsTrue(TireFittingPage.AllDisplayedCheckBoxes.IsHided(true));
         }
 
