@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace AnyWashAutotests.SpecFlow.Features
+namespace AnyWashAutotests.SpecFlow.Features.PartnerFeatures
 {
     using TechTalk.SpecFlow;
     using System;
@@ -39,7 +39,7 @@ namespace AnyWashAutotests.SpecFlow.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("ru"), "SpecFlow/Features", "Интерфейс выбора типа услуг со стороны партнера", "UI-тесты", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("ru"), "SpecFlow/Features/PartnerFeatures", "Интерфейс выбора типа услуг со стороны партнера", "UI-тесты", ProgrammingLanguage.CSharp, new string[] {
                         "all",
                         "PartnerMainPageInterface"});
             testRunner.OnFeatureStart(featureInfo);

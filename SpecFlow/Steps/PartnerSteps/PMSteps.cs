@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
 
-namespace AnyWashAutotests.SpecFlow.Steps
+namespace AnyWashAutotests.SpecFlow.Steps.PartnerSteps
 {
     [Binding]
     public sealed class PMSteps
@@ -23,11 +23,11 @@ namespace AnyWashAutotests.SpecFlow.Steps
         public void ДопустимАвторизацияВТестовыйАккаунтМойки_()
         {
             //Ввод логина
-            PartnerLogInPage.InputName.FindElement().SendKeys(Config.PartnerLogin);
+            LogInPage.InputName.FindElement().SendKeys(Config.PartnerLogin);
             //Ввод пароля
-            PartnerLogInPage.InputPassword.FindElement().SendKeys(Config.PartnerPassword);
+            LogInPage.InputPassword.FindElement().SendKeys(Config.PartnerPassword);
             //Клик по кнопке войти
-            PartnerLogInPage.BtnLogIn.Click();
+            LogInPage.BtnLogIn.Click();
         }
 
         [Given(@"Клик по кнопке Выйти")]
@@ -39,7 +39,7 @@ namespace AnyWashAutotests.SpecFlow.Steps
         [Given(@"Проверка нахождения на странице авторизации")]
         public void ДопустимПроверкаНахожденияНаСтраницеАвторизации()
         {
-            Assert.IsTrue(PartnerLogInPage.InputName.IsDisplayed());
+            Assert.IsTrue(LogInPage.InputName.IsDisplayed());
         }
 
         [Given(@"Проверка открытия интерфейса автомойки")]

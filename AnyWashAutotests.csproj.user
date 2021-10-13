@@ -7,13 +7,13 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="SpecFlow\Steps\CWSteps.cs">
+    <Compile Update="SpecFlow\Steps\PartnerSteps\CWSteps.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SpecFlow\Steps\PMSteps.cs">
+    <Compile Update="SpecFlow\Steps\PartnerSteps\PMSteps.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SpecFlow\Steps\TFSteps.cs">
+    <Compile Update="SpecFlow\Steps\PartnerSteps\TFSteps.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

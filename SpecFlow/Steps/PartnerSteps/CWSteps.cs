@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using System.Collections.Generic;
 using AnyWashAutotests.Elements;
 
-namespace AnyWashAutotests.Steps
+namespace AnyWashAutotests.Steps.PartnerSteps
 {
     [Binding]
     public sealed class CWSteps
@@ -23,11 +23,11 @@ namespace AnyWashAutotests.Steps
         public void ДопустимАвторизацияВТестовыйАккаунтМойки()
         {
             //Ввод логина
-            PartnerLogInPage.InputName.FindElement().SendKeys(Config.PartnerLogin);
+            LogInPage.InputName.FindElement().SendKeys(Config.PartnerLogin);
             //Ввод пароля
-            PartnerLogInPage.InputPassword.FindElement().SendKeys(Config.PartnerPassword);
+            LogInPage.InputPassword.FindElement().SendKeys(Config.PartnerPassword);
             //Клик по кнопке войти
-            PartnerLogInPage.BtnLogIn.Click();
+            LogInPage.BtnLogIn.Click();
         }
 
         [Given(@"Клик по кнопке Мойка")]

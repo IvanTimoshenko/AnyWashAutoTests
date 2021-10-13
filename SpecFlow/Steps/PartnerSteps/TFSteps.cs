@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
 
-namespace AnyWashAutotests.SpecFlow.Steps
+namespace AnyWashAutotests.SpecFlow.Steps.PartnerSteps
 {
     [Binding]
     public sealed class TFSteps
@@ -25,11 +25,11 @@ namespace AnyWashAutotests.SpecFlow.Steps
         public void ДопустимАвторизацияВТестовыйАккаунт_Мойки()
         {
             //Ввод логина
-            PartnerLogInPage.InputName.FindElement().SendKeys(Config.PartnerLogin);
+            LogInPage.InputName.FindElement().SendKeys(Config.PartnerLogin);
             //Ввод пароля
-            PartnerLogInPage.InputPassword.FindElement().SendKeys(Config.PartnerPassword);
+            LogInPage.InputPassword.FindElement().SendKeys(Config.PartnerPassword);
             //Клик по кнопке войти
-            PartnerLogInPage.BtnLogIn.Click();
+            LogInPage.BtnLogIn.Click();
         }
 
         [Given(@"Клик по кнопке Шиномонтаж")]
