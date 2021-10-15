@@ -115,3 +115,4 @@ C:\Users\ivanv\source\repos\AnyWashAutotests\bin\Debug\netcoreapp3.1\WebDriver.S
 C:\Users\ivanv\source\repos\AnyWashAutotests\bin\Debug\netcoreapp3.1\WebDriver.dll
 C:\Users\ivanv\source\repos\AnyWashAutotests\obj\Debug\netcoreapp3.1\AnyWashAutotests.Properties.Resources.resources
 C:\Users\ivanv\source\repos\AnyWashAutotests\obj\Debug\netcoreapp3.1\AnyWashAutotests.csproj.GenerateResource.cache
+C:\Users\ivanv\source\repos\AnyWashAutotests\bin\Debug\netcoreapp3.1\AnyWashAutotests.exe

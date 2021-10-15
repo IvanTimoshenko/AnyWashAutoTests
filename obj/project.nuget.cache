@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "f82z5OTUTCSettgUb4EylMMbunM0uWQ9qOYUith4nTu9m1AuF/jmcSWREKOM2Bk1EuEzekyDOTiEeY5/+v/I5Q==",
+  "dgSpecHash": "VZxfCuevjME1hyNunSZfk0N7M/rYbh5IRet0/YqpDkkN8utBOY6xgOKrqoK3SLj0P3B/i2yOW/j1O8WCzcLZ5g==",
   "success": true,
   "projectFilePath": "C:\\Users\\ivanv\\source\\repos\\AnyWashAutotests\\AnyWashAutotests.csproj",
   "expectedPackageFiles": [
@@ -44,7 +44,7 @@
     "C:\\Users\\ivanv\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\ivanv\\.nuget\\packages\\selenium.support\\3.141.0\\selenium.support.3.141.0.nupkg.sha512",
     "C:\\Users\\ivanv\\.nuget\\packages\\selenium.webdriver\\3.141.0\\selenium.webdriver.3.141.0.nupkg.sha512",
-    "C:\\Users\\ivanv\\.nuget\\packages\\selenium.webdriver.chromedriver\\92.0.4515.10700\\selenium.webdriver.chromedriver.92.0.4515.10700.nupkg.sha512",
+    "C:\\Users\\ivanv\\.nuget\\packages\\selenium.webdriver.chromedriver\\94.0.4606.6100\\selenium.webdriver.chromedriver.94.0.4606.6100.nupkg.sha512",
     "C:\\Users\\ivanv\\.nuget\\packages\\specflow\\3.9.8\\specflow.3.9.8.nupkg.sha512",
     "C:\\Users\\ivanv\\.nuget\\packages\\specflow.internal.json\\1.0.8\\specflow.internal.json.1.0.8.nupkg.sha512",
     "C:\\Users\\ivanv\\.nuget\\packages\\specflow.nunit\\3.9.8\\specflow.nunit.3.9.8.nupkg.sha512",
@@ -115,7 +115,8 @@
     "C:\\Users\\ivanv\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\ivanv\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\ivanv\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
-    "C:\\Users\\ivanv\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\ivanv\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\ivanv\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.17\\microsoft.netcore.app.host.win-x64.3.1.17.nupkg.sha512"
   ],
   "logs": []
 }
