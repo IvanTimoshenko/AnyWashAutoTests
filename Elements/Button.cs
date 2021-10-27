@@ -9,6 +9,9 @@ using System.Threading;
 
 namespace AnyWashAutotests.Elements
 {
+    /// <summary>
+    /// Специальный класс с переработанными методами для Selenium - "Кнопки"
+    /// </summary>
     public class Button : Element
     {
         public Button(By by) : base(by) { }
@@ -48,7 +51,6 @@ namespace AnyWashAutotests.Elements
                 }
                 return false;
             }
-
         }
     }
 }

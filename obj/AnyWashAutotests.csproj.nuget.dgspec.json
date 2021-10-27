@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[16.5.0, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.10.14, )"
+            },
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[3.17.0, )"
@@ -66,7 +70,7 @@
             },
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
-              "version": "[92.0.4515.10700, )"
+              "version": "[94.0.4606.6100, )"
             },
             "SpecFlow.NUnit": {
               "target": "Package",
@@ -91,6 +95,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.17, 3.1.17]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

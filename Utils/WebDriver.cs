@@ -18,10 +18,9 @@ namespace AnyWashAutotests.Utils
             KillAllChromeDrivers();
             
             Driver = new ChromeDriver();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
             Wait = new WebDriverWait(Driver, Config.WebDriverWait);
             Driver.Manage().Window.Maximize();
-            Driver.Navigate().GoToUrl("https://anywash.ru");
+            Driver.Navigate().GoToUrl(Config.MainPageURL);
         }
 
         public static void KillAllChromeDrivers()
@@ -35,11 +34,21 @@ namespace AnyWashAutotests.Utils
                 catch (Exception) { }
             }
         }
-
         /// <summary> Закрыть браузер </summary>
         public void Quit()
         {
             Driver.Quit();
+        }
+
+        /// <summary>
+        /// Метод для переключение на новую вкладку
+        /// </summary>
+        /// <param name="oldTab"> старая вкладка </param>
+        public void SwitchToNewHandle(string oldTab)
+        {
+            var handles = new List<string>(Driver.WindowHandles);
+            handles.Remove(oldTab);
+            Driver.SwitchTo().Window(handles[0]);
         }
     }
 }

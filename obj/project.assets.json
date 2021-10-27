@@ -424,6 +424,13 @@
           "build/netcoreapp2.1/Microsoft.TestPlatform.TestHost.props": {}
         }
       },
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.14": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
+          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets": {}
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -716,7 +723,7 @@
           "lib/netstandard2.0/WebDriver.dll": {}
         }
       },
-      "Selenium.WebDriver.ChromeDriver/92.0.4515.10700": {
+      "Selenium.WebDriver.ChromeDriver/94.0.4606.6100": {
         "type": "package",
         "build": {
           "build/Selenium.WebDriver.ChromeDriver.targets": {}
@@ -2497,6 +2504,85 @@
         "microsoft.testplatform.testhost.nuspec"
       ]
     },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.14": {
+      "sha512": "vjweoaSTnMiJY4Ts4/9xHt3vStk36q8FRXxvwqSx7YjdXTbQE0i/JxncHeL6vsdE1+4sn6of2/eLQeGZ43eL2Q==",
+      "type": "package",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.10.14",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA.md",
+        "ThirdPartyNotices.txt",
+        "build/Container.props",
+        "build/Container.targets",
+        "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props",
+        "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets",
+        "build/Rules/GeneralBrowseObject.xaml",
+        "build/Rules/cs-CZ/GeneralBrowseObject.xaml",
+        "build/Rules/de-DE/GeneralBrowseObject.xaml",
+        "build/Rules/es-ES/GeneralBrowseObject.xaml",
+        "build/Rules/fr-FR/GeneralBrowseObject.xaml",
+        "build/Rules/it-IT/GeneralBrowseObject.xaml",
+        "build/Rules/ja-JP/GeneralBrowseObject.xaml",
+        "build/Rules/ko-KR/GeneralBrowseObject.xaml",
+        "build/Rules/pl-PL/GeneralBrowseObject.xaml",
+        "build/Rules/pt-BR/GeneralBrowseObject.xaml",
+        "build/Rules/ru-RU/GeneralBrowseObject.xaml",
+        "build/Rules/tr-TR/GeneralBrowseObject.xaml",
+        "build/Rules/zh-CN/GeneralBrowseObject.xaml",
+        "build/Rules/zh-TW/GeneralBrowseObject.xaml",
+        "build/ToolsTarget.props",
+        "build/ToolsTarget.targets",
+        "icon.png",
+        "microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512",
+        "microsoft.visualstudio.azure.containers.tools.targets.nuspec",
+        "tools/Microsoft.VisualStudio.Containers.Tools.Common.dll",
+        "tools/Microsoft.VisualStudio.Containers.Tools.Shared.dll",
+        "tools/Microsoft.VisualStudio.Containers.Tools.Tasks.dll",
+        "tools/Newtonsoft.Json.dll",
+        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/de/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/de/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/de/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/es/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/es/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/es/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/it/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/it/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/it/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/utils/KillProcess.exe",
+        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
+        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
+        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
+        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll"
+      ]
+    },
     "Microsoft.Win32.Primitives/4.3.0": {
       "sha512": "9ZQKCWxH7Ijp9BfahvL2Zyf1cJIk8XYLF6Yjzr2yi0b2cOut/HQ31qf1ThHAgCc3WiZMdnWcfJCgN82/0UunxA==",
       "type": "package",
@@ -3038,10 +3124,10 @@
         "selenium.webdriver.nuspec"
       ]
     },
-    "Selenium.WebDriver.ChromeDriver/92.0.4515.10700": {
-      "sha512": "1izYN4xibfIy9MgQvMpSzoNPU5TugR18aOcXptSVpVrbrgEl6pah3kgNm7WPwSknG0UX4E2u//oq0oEbqzsoqg==",
+    "Selenium.WebDriver.ChromeDriver/94.0.4606.6100": {
+      "sha512": "3mk0sCbTR0bCvis1VbIR6SF8PxRXQgwHjIg1bVve0DmQqC8muxoxIYdVrb3oL42cmGqVUoAxRFN/MWDHGKWYIw==",
       "type": "package",
-      "path": "selenium.webdriver.chromedriver/92.0.4515.10700",
+      "path": "selenium.webdriver.chromedriver/94.0.4606.6100",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3052,7 +3138,7 @@
         "driver/mac64/chromedriver",
         "driver/win32/chromedriver.exe",
         "nupkg-icon.png",
-        "selenium.webdriver.chromedriver.92.0.4515.10700.nupkg.sha512",
+        "selenium.webdriver.chromedriver.94.0.4606.6100.nupkg.sha512",
         "selenium.webdriver.chromedriver.nuspec"
       ]
     },
@@ -6831,10 +6917,11 @@
     ".NETCoreApp,Version=v3.1": [
       "FluentAssertions >= 5.10.3",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.14",
       "NUnit3TestAdapter >= 3.17.0",
       "Selenium.Support >= 3.141.0",
       "Selenium.WebDriver >= 3.141.0",
-      "Selenium.WebDriver.ChromeDriver >= 92.0.4515.10700",
+      "Selenium.WebDriver.ChromeDriver >= 94.0.4606.6100",
       "SpecFlow.NUnit >= 3.9.8",
       "SpecFlow.Plus.LivingDocPlugin >= 3.9.5",
       "nunit >= 3.13.1"
@@ -6892,6 +6979,10 @@
             "target": "Package",
             "version": "[16.5.0, )"
           },
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+            "target": "Package",
+            "version": "[1.10.14, )"
+          },
           "NUnit3TestAdapter": {
             "target": "Package",
             "version": "[3.17.0, )"
@@ -6906,7 +6997,7 @@
           },
           "Selenium.WebDriver.ChromeDriver": {
             "target": "Package",
-            "version": "[92.0.4515.10700, )"
+            "version": "[94.0.4606.6100, )"
           },
           "SpecFlow.NUnit": {
             "target": "Package",
@@ -6931,6 +7022,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.17, 3.1.17]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

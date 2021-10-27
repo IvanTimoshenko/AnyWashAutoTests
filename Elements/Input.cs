@@ -5,6 +5,9 @@ using System.Text;
 
 namespace AnyWashAutotests.Elements
 {
+    /// <summary>
+    /// Специальный класс с переработанными методами для Selenium - "Поля ввода данных"
+    /// </summary>
     public class Input : Element
     {
         public Input(By by) : base(by) { }

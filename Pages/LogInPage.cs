@@ -5,8 +5,10 @@ using System.Text;
 
 namespace AnyWashAutotests.Pages
 {
-    /// <summary> Класс объектов страницы авторизации Клиента "https://anywash.info " </summary>
-    public class PartnerLogInPage
+    /// <summary>
+    /// Класс Page Object - Страница авторизации
+    /// </summary>
+    public class LogInPage
     {
         /// <summary> Поле ввода логина </summary>
         public static Input InputName { get; } = new Input("//input[@id='name']");

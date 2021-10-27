@@ -10,10 +10,11 @@
         "dependencies": {
           "FluentAssertions": "5.10.3",
           "Microsoft.NET.Test.Sdk": "16.5.0",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.14",
           "NUnit3TestAdapter": "3.17.0",
           "Selenium.Support": "3.141.0",
           "Selenium.WebDriver": "3.141.0",
-          "Selenium.WebDriver.ChromeDriver": "92.0.4515.10700",
+          "Selenium.WebDriver.ChromeDriver": "94.0.4606.6100",
           "SpecFlow.NUnit": "3.9.8",
           "SpecFlow.Plus.LivingDocPlugin": "3.9.5",
           "NUnit": "3.13.1"
@@ -404,6 +405,7 @@
           }
         }
       },
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.14": {},
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -540,7 +542,7 @@
           }
         }
       },
-      "Selenium.WebDriver.ChromeDriver/92.0.4515.10700": {},
+      "Selenium.WebDriver.ChromeDriver/94.0.4606.6100": {},
       "SpecFlow/3.9.8": {
         "dependencies": {
           "BoDi": "1.5.0",
@@ -1419,6 +1421,13 @@
       "path": "microsoft.testplatform.testhost/16.5.0",
       "hashPath": "microsoft.testplatform.testhost.16.5.0.nupkg.sha512"
     },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vjweoaSTnMiJY4Ts4/9xHt3vStk36q8FRXxvwqSx7YjdXTbQE0i/JxncHeL6vsdE1+4sn6of2/eLQeGZ43eL2Q==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.10.14",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512"
+    },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1587,12 +1596,12 @@
       "path": "selenium.webdriver/3.141.0",
       "hashPath": "selenium.webdriver.3.141.0.nupkg.sha512"
     },
-    "Selenium.WebDriver.ChromeDriver/92.0.4515.10700": {
+    "Selenium.WebDriver.ChromeDriver/94.0.4606.6100": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1izYN4xibfIy9MgQvMpSzoNPU5TugR18aOcXptSVpVrbrgEl6pah3kgNm7WPwSknG0UX4E2u//oq0oEbqzsoqg==",
-      "path": "selenium.webdriver.chromedriver/92.0.4515.10700",
-      "hashPath": "selenium.webdriver.chromedriver.92.0.4515.10700.nupkg.sha512"
+      "sha512": "sha512-3mk0sCbTR0bCvis1VbIR6SF8PxRXQgwHjIg1bVve0DmQqC8muxoxIYdVrb3oL42cmGqVUoAxRFN/MWDHGKWYIw==",
+      "path": "selenium.webdriver.chromedriver/94.0.4606.6100",
+      "hashPath": "selenium.webdriver.chromedriver.94.0.4606.6100.nupkg.sha512"
     },
     "SpecFlow/3.9.8": {
       "type": "package",
